@@ -17,8 +17,10 @@ public class UserInfo {
     @Column(nullable = false, columnDefinition = "text", unique =  true)
     private String email;
 
-    @Column(nullable = false, columnDefinition = "text")
-    private String status;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "status_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private StudentStatus studentStatus;
 
     @Column(nullable = false, columnDefinition = "text", name = "first_name")
     private String firstName;
@@ -46,8 +48,10 @@ public class UserInfo {
     @Column(columnDefinition = "text")
     private String specialty;
 
-    @Column(columnDefinition = "text")
-    private String source;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "source_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Source source;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "enrollment_id")
@@ -56,117 +60,5 @@ public class UserInfo {
 
     protected UserInfo() {}
 
-    public UserInfo(String email, String status, String firstName, String lastName, City city, String phone, int grade) {
-        this.email = email;
-        this.status = status;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
-        this.phone = phone;
-        this.grade = grade;
-    }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public int getGrade() {
-        return grade;
-    }
-
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
-    public String getUniversity() {
-        return university;
-    }
-
-    public void setUniversity(String university) {
-        this.university = university;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public String getSpecialty() {
-        return specialty;
-    }
-
-    public void setSpecialty(String specialty) {
-        this.specialty = specialty;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public Enrollment getEnrollment() {
-        return enrollment;
-    }
-
-    public void setEnrollment(Enrollment enrollment) {
-        this.enrollment = enrollment;
-    }
 }

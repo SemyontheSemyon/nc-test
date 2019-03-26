@@ -1,5 +1,8 @@
 package com.ncTestService.models;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,13 +16,15 @@ public class City {
     @Column(nullable = false, columnDefinition = "text", unique = true)
     private String name;
 
-    @Column(nullable = false, columnDefinition = "text")
-    private String country;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "country_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    Country country;
 
     protected City() {
     }
 
-    public City(String name, String country) {
+    public City(String name, Country country) {
         this.name = name;
         this.country = country;
     }
@@ -40,11 +45,11 @@ public class City {
         this.name = name;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 }
