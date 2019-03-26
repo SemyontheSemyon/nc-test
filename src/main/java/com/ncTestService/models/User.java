@@ -7,7 +7,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_core")
 public class User {
 
     @Id
