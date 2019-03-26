@@ -20,19 +20,19 @@ public class Enrollment {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Speciality speciality;
 
-    @Column(nullable = false, columnDefinition = "date")
+    @Column(nullable = false, columnDefinition = "date", name = "app_start")
     private Date appStart;
 
-    @Column(nullable = false, columnDefinition = "date")
+    @Column(nullable = false, columnDefinition = "date", name = "app_end")
     private Date appEnd;
 
-    @Column(nullable = false, columnDefinition = "date")
+    @Column(nullable = false, columnDefinition = "date", name = "test_start")
     private Date testStart;
 
-    @Column(nullable = false, columnDefinition = "date")
+    @Column(nullable = false, columnDefinition = "date", name = "test_end")
     private Date testEnd;
 
-    @Column(nullable = false, columnDefinition = "date")
+    @Column(nullable = false, columnDefinition = "date", name = "created_at")
     private Date createdAt;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)

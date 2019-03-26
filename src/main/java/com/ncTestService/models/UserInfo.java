@@ -20,10 +20,10 @@ public class UserInfo {
     @Column(nullable = false, columnDefinition = "text")
     private String status;
 
-    @Column(nullable = false, columnDefinition = "text")
+    @Column(nullable = false, columnDefinition = "text", name = "first_name")
     private String firstName;
 
-    @Column(nullable = false, columnDefinition = "text")
+    @Column(nullable = false, columnDefinition = "text", name = "last_name")
     private String lastName;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
