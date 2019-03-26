@@ -14,17 +14,17 @@ public class UserTech {
     @GeneratedValue
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "tech_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Tech tech;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @Column(columnDefinition = "integer")
+    @Column(columnDefinition = "integer", nullable = false)
     private int level;
 
     private UserTech() {}
