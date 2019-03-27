@@ -1,11 +1,15 @@
 package com.ncTestService.models;
 
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
+@Data
+@RequiredArgsConstructor
 @Entity
 @Table(name = "test_format")
 public class TestFormat {
@@ -25,44 +29,4 @@ public class TestFormat {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Speciality speciality;
 
-    protected TestFormat() {
-    }
-
-    public TestFormat(int time, int numberOfQuestions, Speciality speciality) {
-        this.time = time;
-        this.numberOfQuestions = numberOfQuestions;
-        this.speciality = speciality;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
-        this.time = time;
-    }
-
-    public int getNumberOfQuestions() {
-        return numberOfQuestions;
-    }
-
-    public void setNumberOfQuestions(int numberOfQuestions) {
-        this.numberOfQuestions = numberOfQuestions;
-    }
-
-    public Speciality getSpeciality() {
-        return speciality;
-    }
-
-    public void setSpeciality(Speciality speciality) {
-        this.speciality = speciality;
-    }
 }

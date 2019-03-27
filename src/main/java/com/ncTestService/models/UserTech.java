@@ -1,11 +1,15 @@
 package com.ncTestService.models;
 
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
+@Data
+@RequiredArgsConstructor
 @Entity
 @Table(name = "user_tech")
 public class UserTech {
@@ -27,35 +31,4 @@ public class UserTech {
     @Column(columnDefinition = "integer", nullable = false)
     private int level;
 
-    private UserTech() {}
-
-    public UserTech(Tech tech, User user, int level) {
-        this.tech = tech;
-        this.user = user;
-        this.level = level;
-    }
-
-    public Tech getTech() {
-        return tech;
-    }
-
-    public void setTech(Tech tech) {
-        this.tech = tech;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
 }
