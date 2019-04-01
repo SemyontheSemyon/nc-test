@@ -36,6 +36,9 @@ public class TestUser {
     @OnDelete(action = OnDeleteAction.CASCADE)
     Answer answer;
 
+    @Column(columnDefinition = "text", name = "student_answer")
+    String studentAnswer;
+
     protected TestUser() {
     }
 
