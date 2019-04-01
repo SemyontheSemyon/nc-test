@@ -19,4 +19,7 @@ public class Speciality {
     @Column(nullable = false, columnDefinition = "text", unique = true)
     private String name;
 
+    @Column(columnDefinition = "text")
+    private String description;
+
 }
