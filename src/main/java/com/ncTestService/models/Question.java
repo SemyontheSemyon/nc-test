@@ -1,11 +1,15 @@
 package com.ncTestService.models;
 
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
+@Data
+@RequiredArgsConstructor
 @Entity
 @Table(name = "question")
 public class Question {
@@ -14,7 +18,7 @@ public class Question {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false, columnDefinition = "text", unique =  true)
+    @Column(nullable = false, columnDefinition = "text", unique = true)
     private String text;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
@@ -22,35 +26,4 @@ public class Question {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Speciality speciality;
 
-    protected Question() {
-    }
-
-    public Question(String text, Speciality speciality) {
-        this.text = text;
-        this.speciality = speciality;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public Speciality getSpeciality() {
-        return speciality;
-    }
-
-    public void setSpeciality(Speciality speciality) {
-        this.speciality = speciality;
-    }
 }
