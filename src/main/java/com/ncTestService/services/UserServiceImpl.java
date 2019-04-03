@@ -101,7 +101,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserTech(UserTech userTech) {
-        userTechRepository.save(userTech)
+        userTechRepository.save(userTech);
     }
 
     @Override
@@ -130,12 +130,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserInfo> findByEnrollment(Date appStart) {
-        return userInfoRepository.findByEnrollment(enrollmentRepository.findByAppStart(appStart));
-    }
-
-    @Override
-    public List<City> findByCountry(String name) {
-        return cityRepository.findByCountry(countryRepository.findByName(name));
+    public List<UserInfo> findByEnrollment(Date appStart, String speciality) {
+        return userInfoRepository.findByEnrollment(enrollmentRepository.findByAppStartAndSpeciality(appStart, specialityRepository.findByName(speciality)));
     }
 }

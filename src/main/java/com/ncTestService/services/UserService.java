@@ -15,22 +15,22 @@ public interface UserService {
 
     Iterable<UserInfo> getAllUserInfo();
     UserInfo getUserInfo(Long id);
-    void addUserInfo(UserInfo user);
-    void updateUserInfo(UserInfo user);
+    void addUserInfo(UserInfo userInfo);
+    void updateUserInfo(UserInfo userInfo);
     void deleteUserInfo(Long id);
 
     Iterable<UserTech> getAllUserTechs();
     UserTech getUserTech(Long id);
-    void addUserTech(UserTech user);
-    void updateUserTech(UserTech user);
+    void addUserTech(UserTech userTech);
+    void updateUserTech(UserTech userTech);
     void deleteUserTech(Long id);
 
     List<UserInfo> findByUserName(String firstName, String lastName);
     List<UserInfo> findByUserStatus(String userStatus);
     List<UserInfo> findByCity(String city);
     List<UserInfo> findBySpeciality(String speciality);
-    List<UserInfo> findByEnrollment(Date appStart);
+    List<UserInfo> findByEnrollment(Date appStart, String speciality);
 
-    List<City> findByCountry(String name);
+
 
 }
