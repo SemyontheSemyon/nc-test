@@ -8,24 +8,24 @@ import java.util.List;
 
 public interface TestService {
 
-    List<Test> getAllTests();
+    Iterable<Test> getAllTests();
     Test getTest(Long id);
     void addTest(Test test);
     void updateTest(Test test);
-    void deleteTest(Test test);
+    void deleteTest(Long id);
 
-    List<TestUser> getAllTestUsers();
+    Iterable<TestUser> getAllTestUsers();
     TestUser getTestUser(Long id);
     void addTestUser(TestUser testUser);
     void updateTestUser(TestUser testUser);
-    void deleteTestUser(TestUser testUser);
+    void deleteTestUser(Long id);
 
-    List<TestFormat> getAllTestFormats();
+    Iterable<TestFormat> getAllTestFormats();
     TestFormat getTestFormat(Long id);
     void addTestFormat(TestFormat testFormat);
     void updateTestFormat(TestFormat testFormat);
-    void deleteTestFormat(TestFormat testFormat);
+    void deleteTestFormat(Long id);
 
     List<Question> generateTest(int questionsNum);
-    void validateQuestion(Question question, String answer);
+    boolean validateQuestion(String answer);
 }

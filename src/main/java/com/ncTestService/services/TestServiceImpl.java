@@ -1,9 +1,6 @@
 package com.ncTestService.services;
 
-import com.ncTestService.models.Question;
-import com.ncTestService.models.Test;
-import com.ncTestService.models.TestFormat;
-import com.ncTestService.models.TestUser;
+import com.ncTestService.models.*;
 import com.ncTestService.repositories.*;
 import org.springframework.stereotype.Service;
 
@@ -20,78 +17,78 @@ public class TestServiceImpl implements TestService {
     AnswerRepository answerRepository;
 
     @Override
-    public List<Test> getAllTests() {
-        return null;
+    public Iterable<Test> getAllTests() {
+        return testRepository.findAll();
     }
 
     @Override
     public Test getTest(Long id) {
-        return null;
+        return testRepository.findById(id).get();
     }
 
     @Override
     public void addTest(Test test) {
-
+        testRepository.save(test);
     }
 
     @Override
     public void updateTest(Test test) {
-
+        testRepository.save(test);
     }
 
     @Override
-    public void deleteTest(Test test) {
-
+    public void deleteTest(Long id) {
+        testRepository.deleteById(id);
     }
 
     @Override
-    public List<TestUser> getAllTestUsers() {
-        return null;
+    public Iterable<TestUser> getAllTestUsers() {
+        return testUserRepository.findAll();
     }
 
     @Override
     public TestUser getTestUser(Long id) {
-        return null;
+        return testUserRepository.findById(id).get();
     }
 
     @Override
     public void addTestUser(TestUser testUser) {
-
+        testUserRepository.save(testUser);
     }
 
     @Override
     public void updateTestUser(TestUser testUser) {
-
+        testUserRepository.save(testUser);
     }
 
     @Override
-    public void deleteTestUser(TestUser testUser) {
-
+    public void deleteTestUser(Long id) {
+        testUserRepository.deleteById(id);
     }
 
     @Override
-    public List<TestFormat> getAllTestFormats() {
-        return null;
+    public Iterable<TestFormat> getAllTestFormats() {
+        return testFormatRepository.findAll();
     }
 
     @Override
     public TestFormat getTestFormat(Long id) {
-        return null;
+        return testFormatRepository.findById(id).get();
     }
 
     @Override
     public void addTestFormat(TestFormat testFormat) {
-
+        testFormatRepository.save(testFormat);
     }
 
     @Override
     public void updateTestFormat(TestFormat testFormat) {
-
+        testFormatRepository.save(testFormat);
     }
 
     @Override
-    public void deleteTestFormat(TestFormat testFormat) {
-
+    public void deleteTestFormat(Long id) {
+        testFormatRepository.deleteById(id);
     }
 
     @Override
@@ -108,7 +105,7 @@ public class TestServiceImpl implements TestService {
         return testQuestions;
     }
 
-    void validateQuestion(Question question, String answer){
-
+    public boolean validateQuestion(String answer){
+        return answerRepository.findByText(answer).isCorrect();
     }
 }
