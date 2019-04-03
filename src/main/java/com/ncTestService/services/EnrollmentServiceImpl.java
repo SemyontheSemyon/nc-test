@@ -8,10 +8,12 @@ import com.ncTestService.repositories.CityRepository;
 import com.ncTestService.repositories.CountryRepository;
 import com.ncTestService.repositories.EnrollmentRepository;
 import com.ncTestService.repositories.SpecialityRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class EnrollmentServiceImpl implements EnrollmentService {
 
     EnrollmentRepository enrollmentRepository;

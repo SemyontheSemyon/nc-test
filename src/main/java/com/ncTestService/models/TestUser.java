@@ -36,6 +36,6 @@ public class TestUser {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "answer_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    Answer answer;
+    Answer Answer;
 
 }

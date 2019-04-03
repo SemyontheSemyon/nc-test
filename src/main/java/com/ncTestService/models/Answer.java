@@ -23,6 +23,9 @@ public class Answer {
     @Column(nullable = false, columnDefinition = "text", unique = true)
     String text;
 
+    @Column(nullable = false, columnDefinition = "boolean")
+    boolean correct;
+
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "answ_type_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
