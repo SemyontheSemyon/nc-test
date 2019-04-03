@@ -4,4 +4,5 @@ import com.ncTestService.models.Tech;
 import org.springframework.data.repository.CrudRepository;
 
 public interface TechRepository extends CrudRepository<Tech, Long> {
+    Tech findByName(String name);
 }
