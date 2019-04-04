@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd4a76ca-6271-456e-80aa-7ef0168c9cad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="bd4a76ca-6271-456e-80aa-7ef0168c9cad" name="Default Changelist" comment="added student_answer field to TestUser">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/models/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/models/TestUser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +15,7 @@
     <session id="-1465137901">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -36,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="100" />
-          <entry key="txt" value="38" />
+          <entry key="txt" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="100" />
-          <entry key="PLAIN_TEXT" value="38" />
+          <entry key="PLAIN_TEXT" value="73" />
         </counts>
       </usages-collector>
     </session>
@@ -293,7 +292,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554128053923" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554131190551" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -393,7 +392,7 @@
       <workItem from="1553719906986" duration="1799000" />
       <workItem from="1553809603524" duration="61000" />
       <workItem from="1553809725561" duration="342000" />
-      <workItem from="1554126189052" duration="1818000" />
+      <workItem from="1554126189052" duration="2494000" />
     </task>
     <task id="LOCAL-00001" summary="added description field to Speciality">
       <created>1554126947922</created>
@@ -402,15 +401,21 @@
       <option name="project" value="LOCAL" />
       <updated>1554126947922</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added student_answer field to TestUser">
+      <created>1554128114064</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554128114064</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5481000" />
+    <option name="totallyTimeSpent" value="6157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26385927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -456,7 +461,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added description field to Speciality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added description field to Speciality" />
+    <MESSAGE value="added student_answer field to TestUser" />
+    <option name="LAST_COMMIT_MESSAGE" value="added student_answer field to TestUser" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
