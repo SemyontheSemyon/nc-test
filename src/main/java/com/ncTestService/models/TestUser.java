@@ -36,23 +36,6 @@ public class TestUser {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "answer_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-<<<<<<< HEAD
     Answer Answer;
-=======
-    Answer answer;
-
-    @Column(columnDefinition = "text", name = "student_answer")
-    String studentAnswer;
-
-    protected TestUser() {
-    }
-
-    public TestUser(boolean correct, Test test, Question question, Answer answer) {
-        this.correct = correct;
-        this.test = test;
-        this.question = question;
-        this.answer = answer;
-    }
->>>>>>> master
 
 }
