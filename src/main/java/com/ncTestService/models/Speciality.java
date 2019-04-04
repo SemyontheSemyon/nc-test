@@ -21,4 +21,7 @@ public class Speciality {
     @Column(nullable = false, columnDefinition = "text", unique = true)
     private String name;
 
+    @Column(nullable = false, columnDefinition = "text")
+    private String description;
+
 }

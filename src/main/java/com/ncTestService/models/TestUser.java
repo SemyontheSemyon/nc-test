@@ -18,24 +18,27 @@ public class TestUser {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
     @Column(nullable = false, columnDefinition = "boolean")
-    boolean correct;
+    private boolean isCcorrect;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "test_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    Test test;
+    private Test test;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "question_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    Question question;
+    private Question question;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "answer_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    Answer Answer;
+    private Answer Answer;
+
+    @Column(nullable = false, columnDefinition = "text", unique = true)
+    private String studentAnswer;
 
 }

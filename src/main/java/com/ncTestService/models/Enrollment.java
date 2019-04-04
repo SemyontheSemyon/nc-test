@@ -40,10 +40,4 @@ public class Enrollment {
 
     @Column(nullable = false, columnDefinition = "date", name = "created_at")
     private Date createdAt;
-
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "city_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private City city;
-
 }
