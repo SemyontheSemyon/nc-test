@@ -14,8 +14,8 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "enrollment_city")
-public class EnrollmentCity {
+@Table(name = "enrollment_city_test_format")
+public class EnrollmentCityTestFormat {
 
     @Id
     @GeneratedValue
@@ -26,9 +26,14 @@ public class EnrollmentCity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Enrollment enrollment;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "city_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "city_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private City city;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "test_format_id", nullable = true)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private TestFormat testFormat;
 
 }

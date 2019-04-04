@@ -1,33 +1,40 @@
 package com.ncTestService.controllers;
 
 import com.ncTestService.models.AnswerType;
+import com.ncTestService.models.Question;
 import com.ncTestService.repositories.AnswerTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
-@RequestMapping("/")
+@RequestMapping("/test")
 public class TestController {
 
-    AnswerTypeRepository answerTypeRepository;
-
-    @Autowired
-    public TestController(AnswerTypeRepository answerTypeRepository) {
-        this.answerTypeRepository = answerTypeRepository;
-    }
-
     @GetMapping
-    public Iterable<AnswerType> getAnswerTypes() {
-        return answerTypeRepository.findAll();
+    public List<Question> getQuestions(@RequestParam(name = "specialityName") String specialityName) {
+
+        //implement
+
+        return new ArrayList<>();
+
     }
 
-    @PostMapping(path = "/{type}")
-    public AnswerType addAnswerType (@PathVariable("type") String type){
-        AnswerType answerType = new AnswerType();
-        answerType.setType(type);
+    @PostMapping
+    public ResponseEntity createTestUsers(@RequestBody List<Question> questions) {
 
-        return answerTypeRepository.save(answerType);
+        //implement
+
+        return ResponseEntity.ok(HttpStatus.OK);
+
     }
+
+
+    //узнать про GET /test/finished
 
 }
