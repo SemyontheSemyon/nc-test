@@ -38,7 +38,7 @@ public class TestUser {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Answer Answer;
 
-    @Column(nullable = false, columnDefinition = "text", unique = true)
+    @Column(nullable = false, columnDefinition = "text", name = "student_answer")
     private String studentAnswer;
 
 }
