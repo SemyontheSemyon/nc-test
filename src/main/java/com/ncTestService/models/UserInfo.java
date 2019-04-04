@@ -2,6 +2,7 @@ package com.ncTestService.models;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "user_info")
 public class UserInfo {
@@ -17,6 +19,9 @@ public class UserInfo {
     @Id
     @GeneratedValue
     private Long id;
+
+    @OneToOne(mappedBy = "user")
+    private User user;
 
     @Column(nullable = false, columnDefinition = "text", unique =  true)
     private String email;

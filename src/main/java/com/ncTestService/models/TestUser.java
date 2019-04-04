@@ -2,6 +2,7 @@ package com.ncTestService.models;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "test_user")
 public class TestUser {
@@ -34,6 +36,9 @@ public class TestUser {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "answer_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
+<<<<<<< HEAD
+    Answer Answer;
+=======
     Answer answer;
 
     @Column(columnDefinition = "text", name = "student_answer")
@@ -48,5 +53,6 @@ public class TestUser {
         this.question = question;
         this.answer = answer;
     }
+>>>>>>> master
 
 }
