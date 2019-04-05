@@ -70,6 +70,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserInfo getUserInfo(User user) {
+        return userInfoRepository.findByUser(user).get();
+    }
+
+    @Override
     public void addUserInfo(UserInfo userInfo) {
         userInfoRepository.save(userInfo);
     }

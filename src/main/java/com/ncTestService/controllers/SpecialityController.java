@@ -1,9 +1,15 @@
 package com.ncTestService.controllers;
 
 
+import com.ncTestService.DTO.SpecialityEnrollmentDTO;
+import com.ncTestService.models.Enrollment;
 import com.ncTestService.models.Question;
-import com.ncTestService.models.Speciality;
 import com.ncTestService.models.User;
+import com.ncTestService.models.UserInfo;
+import com.ncTestService.services.EnrollmentService;
+import com.ncTestService.services.SpecialityEnrollmentDTOService;
+import com.ncTestService.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,17 +21,30 @@ import java.util.List;
 @RequestMapping("/speciality")
 public class SpecialityController {
 
+    @Autowired
+    SpecialityEnrollmentDTOService specialityEnrollmentDTOService;
+
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    EnrollmentService enrollmentService;
+
     @GetMapping("/{specialityName}")
-    public Speciality getSpeciality(@PathVariable String specialityName) {
+    public SpecialityEnrollmentDTO getSpecialityAndEnrollments(@PathVariable String specialityName) {
 
-        //implement
 
-        return new Speciality();
+        return specialityEnrollmentDTOService.getSpecialityEnrollmentDTO(specialityName);
+
 
     }
 
     @PostMapping("/{specialityName}/{enrollmentId}")
-    public ResponseEntity addEnrollment(@RequestBody User user) {
+    public ResponseEntity addEnrollment(@RequestBody User user, @PathVariable Long enrollmentId) {
+
+        Enrollment enrollment = enrollmentService.getEnrollment(enrollmentId);
+
+        UserInfo userInfo = userService.getUserInfo(user);
 
         //implement
 

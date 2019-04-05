@@ -3,6 +3,7 @@ package com.ncTestService.services;
 
 import com.ncTestService.models.City;
 import com.ncTestService.models.Enrollment;
+import com.ncTestService.models.Speciality;
 import com.ncTestService.models.User;
 import com.ncTestService.repositories.CityRepository;
 import com.ncTestService.repositories.CountryRepository;
@@ -59,6 +60,11 @@ public class EnrollmentServiceImpl implements EnrollmentService {
     @Override
     public List<Enrollment> findByCity(String city) {
         return enrollmentRepository.findByCity(cityRepository.findByName(city));
+    }
+
+    @Override
+    public List<Enrollment> findFirstFive(Speciality speciality) {
+        return enrollmentRepository.findFirst5BySpecialityOrderByAppStartDesc(speciality);
     }
 
     @Override

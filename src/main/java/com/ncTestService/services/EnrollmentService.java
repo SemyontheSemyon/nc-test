@@ -16,9 +16,11 @@ public interface EnrollmentService {
     void updateEnrollment(Enrollment enrollment);
     void deleteEnrollment(Long id);
 
+
     List<Enrollment> findByAppStart(Date appStart);
     List<Enrollment> findBySpeciality(String speciality);
     List<Enrollment> findByCity(String city);
+    List<Enrollment> findFirstFive(Speciality speciality);
 
     List<City> findByCountry(String name);
 }

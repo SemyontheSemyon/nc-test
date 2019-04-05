@@ -62,7 +62,7 @@ public class UserInfo {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Source source;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "enrollment_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Enrollment enrollment;

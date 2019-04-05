@@ -13,4 +13,5 @@ public interface EnrollmentRepository extends CrudRepository<Enrollment, Long> {
     List<Enrollment> findBySpeciality(Speciality speciality);
     List<Enrollment> findByAppStart(Date appStart);
     List<Enrollment> findByCity(City city);
+    List<Enrollment> findFirst5BySpecialityOrderByAppStartDesc(Speciality speciality);
 }

@@ -15,6 +15,7 @@ public interface UserService {
 
     Iterable<UserInfo> getAllUserInfo();
     UserInfo getUserInfo(Long id);
+    UserInfo getUserInfo(User user);
     void addUserInfo(UserInfo userInfo);
     void updateUserInfo(UserInfo userInfo);
     void deleteUserInfo(Long id);
