@@ -4,7 +4,11 @@ import com.ncTestService.models.*;
 import com.ncTestService.repositories.*;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -15,6 +19,8 @@ public class TestServiceImpl implements TestService {
     TestFormatRepository testFormatRepository;
     QuestionRepository questionRepository;
     AnswerRepository answerRepository;
+    SpecialityRepository specialityRepository;
+    UserRepository userRepository;
 
     @Override
     public Iterable<Test> getAllTests() {
@@ -39,6 +45,20 @@ public class TestServiceImpl implements TestService {
     @Override
     public void deleteTest(Long id) {
         testRepository.deleteById(id);
+    }
+
+    @Override
+    public void createTest(Long userId, TestFormat testFormat) {
+        User user = userRepository.findById(userId).get();
+        Date date = new Date();
+
+        Test test = new Test();
+        test.setTakenAt(date);
+        test.setPassed(false);
+        test.setTestFormat(testFormat);
+        test.setUser(user);
+
+        testRepository.save(test);
     }
 
     @Override
@@ -103,6 +123,24 @@ public class TestServiceImpl implements TestService {
         }
 
         return testQuestions;
+    }
+
+    @Override
+    public List<Question> generateTest(int questionsNum, String specialityName) {
+
+        Speciality speciality = specialityRepository.findByName(specialityName);
+        List<Question> questionList = questionRepository.findBySpeciality(speciality);
+        List<Question> testList = new ArrayList<>();
+
+        for(int i = 0; i<questionsNum; i++) {
+
+            Question q = questionList.get((int)(Math.random() * questionList.size()) + 1);
+            testList.add(q);
+            questionList.remove(q);
+        }
+
+        return testList;
+
     }
 
     public boolean validateQuestion(String answer){

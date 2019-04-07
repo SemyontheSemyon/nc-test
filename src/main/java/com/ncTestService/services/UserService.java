@@ -16,6 +16,7 @@ public interface UserService {
     Iterable<UserInfo> getAllUserInfo();
     UserInfo getUserInfo(Long id);
     UserInfo getUserInfo(User user);
+    UserInfo getUserInfoByUserId(Long userId);
     void addUserInfo(UserInfo userInfo);
     void updateUserInfo(UserInfo userInfo);
     void deleteUserInfo(Long id);
@@ -28,9 +29,7 @@ public interface UserService {
 
     List<UserInfo> findByUserName(String firstName, String lastName);
     List<UserInfo> findByUserStatus(String userStatus);
-    List<UserInfo> findByCity(String city);
     List<UserInfo> findBySpeciality(String speciality);
-    List<UserInfo> findByEnrollment(Date appStart, String speciality);
 
 
 

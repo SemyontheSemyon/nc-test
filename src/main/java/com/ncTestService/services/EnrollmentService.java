@@ -19,7 +19,6 @@ public interface EnrollmentService {
 
     List<Enrollment> findByAppStart(Date appStart);
     List<Enrollment> findBySpeciality(String speciality);
-    List<Enrollment> findByCity(String city);
     List<Enrollment> findFirstFive(Speciality speciality);
 
     List<City> findByCountry(String name);

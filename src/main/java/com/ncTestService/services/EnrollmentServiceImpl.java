@@ -58,11 +58,6 @@ public class EnrollmentServiceImpl implements EnrollmentService {
     }
 
     @Override
-    public List<Enrollment> findByCity(String city) {
-        return enrollmentRepository.findByCity(cityRepository.findByName(city));
-    }
-
-    @Override
     public List<Enrollment> findFirstFive(Speciality speciality) {
         return enrollmentRepository.findFirst5BySpecialityOrderByAppStartDesc(speciality);
     }

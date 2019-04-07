@@ -6,9 +6,7 @@ import com.ncTestService.models.Enrollment;
 import com.ncTestService.models.Question;
 import com.ncTestService.models.User;
 import com.ncTestService.models.UserInfo;
-import com.ncTestService.services.EnrollmentService;
-import com.ncTestService.services.SpecialityEnrollmentDTOService;
-import com.ncTestService.services.UserService;
+import com.ncTestService.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +28,9 @@ public class SpecialityController {
     @Autowired
     EnrollmentService enrollmentService;
 
+    @Autowired
+    QuestionService questionService;
+
     @GetMapping("/{specialityName}")
     public SpecialityEnrollmentDTO getSpecialityAndEnrollments(@PathVariable String specialityName) {
 
@@ -46,7 +47,9 @@ public class SpecialityController {
 
         UserInfo userInfo = userService.getUserInfo(user);
 
-        //implement
+        userInfo.setEnrollment(enrollment);
+
+        userService.updateUserInfo(userInfo);
 
         return ResponseEntity.ok(HttpStatus.OK);
 
@@ -55,9 +58,9 @@ public class SpecialityController {
     @GetMapping("/{specialityName}/questions")
     public List<Question> getQuestions(@PathVariable String specialityName) {
 
-        //implement
+        List<Question> questionList = questionService.getQuestions(specialityName);
 
-        return new ArrayList<>();
+        return questionList;
 
     }
 

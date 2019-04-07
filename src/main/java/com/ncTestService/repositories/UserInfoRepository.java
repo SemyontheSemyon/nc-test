@@ -12,7 +12,7 @@ public interface UserInfoRepository extends CrudRepository<UserInfo, Long> {
     List<UserInfo> findByStudentStatus(StudentStatus studentStatus);
     List<UserInfo> findByCity(City city);
     List<UserInfo> findBySpeciality(Speciality speciality);
-    List<UserInfo> findByEnrollment(Enrollment enrollment);
+    List<UserInfo> findByEnrollment(EnrollmentCityTestFormat enrollment);
     Optional<UserInfo> findByUser(User user);
 
 }

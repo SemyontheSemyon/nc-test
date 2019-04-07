@@ -75,6 +75,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserInfo getUserInfoByUserId(Long userId) {
+        User user = userRepository.findById(userId).get();
+        return userInfoRepository.findByUser(user).get();
+    }
+
+    @Override
     public void addUserInfo(UserInfo userInfo) {
         userInfoRepository.save(userInfo);
     }
@@ -125,17 +131,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserInfo> findByCity(String city) {
-        return userInfoRepository.findByCity(cityRepository.findByName(city));
-    }
-
-    @Override
     public List<UserInfo> findBySpeciality(String speciality) {
         return userInfoRepository.findBySpeciality(specialityRepository.findByName(speciality));
-    }
-
-    @Override
-    public List<UserInfo> findByEnrollment(Date appStart, String speciality) {
-        return userInfoRepository.findByEnrollment(enrollmentRepository.findByAppStartAndSpeciality(appStart, specialityRepository.findByName(speciality)));
     }
 }

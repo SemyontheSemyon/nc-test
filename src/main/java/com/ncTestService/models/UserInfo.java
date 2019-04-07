@@ -1,9 +1,7 @@
 package com.ncTestService.models;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -13,6 +11,7 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
+@Setter
 @Table(name = "user_info")
 public class UserInfo {
 
@@ -65,6 +64,6 @@ public class UserInfo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "enrollment_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Enrollment enrollment;
+    private EnrollmentCityTestFormat enrollment;
 
 }
