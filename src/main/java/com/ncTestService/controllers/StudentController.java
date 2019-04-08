@@ -1,9 +1,8 @@
 package com.ncTestService.controllers;
 
 
-import com.ncTestService.models.User;
 import com.ncTestService.models.UserInfo;
-import com.ncTestService.services.UserService;
+import com.ncTestService.services.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

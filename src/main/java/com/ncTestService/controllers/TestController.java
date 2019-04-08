@@ -3,18 +3,15 @@ package com.ncTestService.controllers;
 import com.ncTestService.DTO.AnswersQuestionsDTO;
 import com.ncTestService.DTO.TestUserDTO;
 import com.ncTestService.models.*;
-import com.ncTestService.repositories.AnswerTypeRepository;
-import com.ncTestService.services.AnswersQuestionsDTOService;
-import com.ncTestService.services.TestService;
-import com.ncTestService.services.TestUserDTOService;
-import com.ncTestService.services.UserService;
+import com.ncTestService.services.interfaces.AnswersQuestionsDTOService;
+import com.ncTestService.services.interfaces.TestService;
+import com.ncTestService.services.interfaces.TestUserDTOService;
+import com.ncTestService.services.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

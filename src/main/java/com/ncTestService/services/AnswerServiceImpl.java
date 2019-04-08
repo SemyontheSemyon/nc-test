@@ -3,6 +3,7 @@ package com.ncTestService.services;
 import com.ncTestService.models.Answer;
 import com.ncTestService.models.Question;
 import com.ncTestService.repositories.AnswerRepository;
+import com.ncTestService.services.interfaces.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

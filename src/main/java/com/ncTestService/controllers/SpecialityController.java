@@ -6,13 +6,15 @@ import com.ncTestService.models.Enrollment;
 import com.ncTestService.models.Question;
 import com.ncTestService.models.User;
 import com.ncTestService.models.UserInfo;
-import com.ncTestService.services.*;
+import com.ncTestService.services.interfaces.EnrollmentService;
+import com.ncTestService.services.interfaces.QuestionService;
+import com.ncTestService.services.interfaces.SpecialityEnrollmentDTOService;
+import com.ncTestService.services.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

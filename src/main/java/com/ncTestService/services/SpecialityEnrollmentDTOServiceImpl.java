@@ -3,6 +3,9 @@ package com.ncTestService.services;
 import com.ncTestService.DTO.SpecialityEnrollmentDTO;
 import com.ncTestService.models.Enrollment;
 import com.ncTestService.models.Speciality;
+import com.ncTestService.services.interfaces.EnrollmentService;
+import com.ncTestService.services.interfaces.SpecialityEnrollmentDTOService;
+import com.ncTestService.services.interfaces.SpecialityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

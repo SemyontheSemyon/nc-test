@@ -5,6 +5,9 @@ import com.ncTestService.models.Answer;
 import com.ncTestService.models.Question;
 import com.ncTestService.models.Test;
 import com.ncTestService.models.TestUser;
+import com.ncTestService.services.interfaces.AnswerService;
+import com.ncTestService.services.interfaces.TestService;
+import com.ncTestService.services.interfaces.TestUserDTOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

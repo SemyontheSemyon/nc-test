@@ -1,4 +1,4 @@
-package com.ncTestService.services;
+package com.ncTestService.services.interfaces;
 
 import com.ncTestService.DTO.SpecialityEnrollmentDTO;
 import org.springframework.stereotype.Service;

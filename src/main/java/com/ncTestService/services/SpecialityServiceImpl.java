@@ -2,6 +2,7 @@ package com.ncTestService.services;
 
 import com.ncTestService.models.Speciality;
 import com.ncTestService.repositories.SpecialityRepository;
+import com.ncTestService.services.interfaces.SpecialityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

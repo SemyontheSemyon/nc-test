@@ -4,11 +4,11 @@ package com.ncTestService.services;
 import com.ncTestService.models.City;
 import com.ncTestService.models.Enrollment;
 import com.ncTestService.models.Speciality;
-import com.ncTestService.models.User;
 import com.ncTestService.repositories.CityRepository;
 import com.ncTestService.repositories.CountryRepository;
 import com.ncTestService.repositories.EnrollmentRepository;
 import com.ncTestService.repositories.SpecialityRepository;
+import com.ncTestService.services.interfaces.EnrollmentService;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

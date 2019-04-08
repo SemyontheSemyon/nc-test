@@ -4,6 +4,7 @@ import com.ncTestService.models.Question;
 import com.ncTestService.models.Speciality;
 import com.ncTestService.repositories.QuestionRepository;
 import com.ncTestService.repositories.SpecialityRepository;
+import com.ncTestService.services.interfaces.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
