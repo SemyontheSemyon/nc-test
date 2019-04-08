@@ -1,11 +1,12 @@
 package com.ncTestService.controllers;
 
-import com.ncTestService.models.AnswerType;
-import com.ncTestService.models.Question;
-import com.ncTestService.models.TestFormat;
-import com.ncTestService.models.UserInfo;
+import com.ncTestService.DTO.AnswersQuestionsDTO;
+import com.ncTestService.DTO.TestUserDTO;
+import com.ncTestService.models.*;
 import com.ncTestService.repositories.AnswerTypeRepository;
+import com.ncTestService.services.AnswersQuestionsDTOService;
 import com.ncTestService.services.TestService;
+import com.ncTestService.services.TestUserDTOService;
 import com.ncTestService.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,8 +27,14 @@ public class TestController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    AnswersQuestionsDTOService answersQuestionsDTOService;
+
+    @Autowired
+    TestUserDTOService testUserDTOService;
+
     @GetMapping
-    public List<Question> getQuestions(@RequestParam(name = "specialityName") String specialityName,
+    public AnswersQuestionsDTO getQuestions(@RequestParam(name = "specialityName") String specialityName,
                                        @RequestParam(name = "userId") Long userId) {
 
 
@@ -37,18 +44,22 @@ public class TestController {
 
         List<Question> questionList = testService.generateTest(testFormat.getNumberOfQuestions(), specialityName);
 
+        AnswersQuestionsDTO dto = answersQuestionsDTOService.createDTO(questionList);
+
         testService.createTest(userId, testFormat);
 
-        return questionList;
+        return dto;
 
     }
 
     @PostMapping
-    public ResponseEntity createTestUsers(@RequestBody List<Question> questions) {
+    public ResponseEntity createTestUsers(@RequestBody TestUserDTO dto) {
 
+        List<TestUser> testUserList = testUserDTOService.makeTestUsers(dto);
 
-
-
+        for(TestUser testUser : testUserList) {
+            testService.addTestUser(testUser);
+        }
 
         return ResponseEntity.ok(HttpStatus.OK);
 

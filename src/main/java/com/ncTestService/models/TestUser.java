@@ -21,7 +21,7 @@ public class TestUser {
     private Long id;
 
     @Column(nullable = false, columnDefinition = "boolean")
-    private boolean isCcorrect;
+    private boolean isCorrect;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "test_id", nullable = false)

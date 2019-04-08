@@ -10,6 +10,7 @@ public interface TestService {
 
     Iterable<Test> getAllTests();
     Test getTest(Long id);
+    Test getTestByUserId(Long userId);
     void addTest(Test test);
     void updateTest(Test test);
     void deleteTest(Long id);

@@ -33,6 +33,14 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
+    public Test getTestByUserId(Long userId) {
+        User user = userRepository.findById(userId).get();
+
+        return testRepository.findByUser(user);
+
+    }
+
+    @Override
     public void addTest(Test test) {
         testRepository.save(test);
     }

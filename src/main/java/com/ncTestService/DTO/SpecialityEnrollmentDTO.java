@@ -7,13 +7,16 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 @Data
 public class SpecialityEnrollmentDTO {
 
     private Speciality speciality;
 
     private List<Enrollment> enrollmentList;
+
+    public SpecialityEnrollmentDTO(Speciality speciality) {
+        this.speciality = speciality;
+    }
 
 
 }
