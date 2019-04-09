@@ -9,9 +9,7 @@ import javax.persistence.*;
 
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
-@Setter
 @Table(name = "user_info")
 public class UserInfo {
 
@@ -19,7 +17,9 @@ public class UserInfo {
     @GeneratedValue
     private Long id;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(fetch =  FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
     @Column(nullable = false, columnDefinition = "text", unique =  true)
@@ -53,8 +53,10 @@ public class UserInfo {
     @Column(columnDefinition = "text")
     private String department;
 
-    @Column(columnDefinition = "text")
-    private String specialty;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "speciality_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Speciality speciality;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "source_id", nullable = false)

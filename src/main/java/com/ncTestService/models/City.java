@@ -10,7 +10,6 @@ import javax.persistence.*;
 
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "city")
 public class City {

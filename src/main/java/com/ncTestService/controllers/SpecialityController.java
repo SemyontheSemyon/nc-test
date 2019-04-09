@@ -2,14 +2,8 @@ package com.ncTestService.controllers;
 
 
 import com.ncTestService.DTO.SpecialityEnrollmentDTO;
-import com.ncTestService.models.Enrollment;
-import com.ncTestService.models.Question;
-import com.ncTestService.models.User;
-import com.ncTestService.models.UserInfo;
-import com.ncTestService.services.interfaces.EnrollmentService;
-import com.ncTestService.services.interfaces.QuestionService;
-import com.ncTestService.services.interfaces.SpecialityEnrollmentDTOService;
-import com.ncTestService.services.interfaces.UserService;
+import com.ncTestService.models.*;
+import com.ncTestService.services.interfaces.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +22,7 @@ public class SpecialityController {
     UserService userService;
 
     @Autowired
-    EnrollmentService enrollmentService;
+    ECTFService ectfService;
 
     @Autowired
     QuestionService questionService;
@@ -45,7 +39,7 @@ public class SpecialityController {
     @PostMapping("/{specialityName}/{enrollmentId}")
     public ResponseEntity addEnrollment(@RequestBody User user, @PathVariable Long enrollmentId) {
 
-        Enrollment enrollment = enrollmentService.getEnrollment(enrollmentId);
+        EnrollmentCityTestFormat enrollment = ectfService.getECTF(enrollmentId);
 
         UserInfo userInfo = userService.getUserInfo(user);
 

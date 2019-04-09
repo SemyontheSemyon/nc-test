@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "answer_type")
 public class AnswerType {

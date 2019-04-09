@@ -23,7 +23,7 @@ public class RegistrationController {
 
         userService.addUser(user);
 
-        return  ResponseEntity.ok(HttpStatus.OK);
+        return ResponseEntity.ok(HttpStatus.OK);
 
     }
 

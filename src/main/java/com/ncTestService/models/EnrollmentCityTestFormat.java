@@ -12,7 +12,6 @@ import javax.persistence.*;
 
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "enrollment_city_test_format")
 public class EnrollmentCityTestFormat {
