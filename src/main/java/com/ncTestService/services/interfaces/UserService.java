@@ -9,6 +9,7 @@ public interface UserService {
 
     Iterable<User> getAllUsers();
     User getUser(Long id);
+    User getUser(String username);
     void addUser(User user);
     void updateUser(User user);
     void deleteUser(Long id);

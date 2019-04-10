@@ -19,7 +19,7 @@ public class EnrollmentController {
     }
 
     @GetMapping("/{enrollmentId}")
-    public Enrollment getEnrollmenr(@PathVariable Long enrollmentId) {
+    public Enrollment getEnrollment(@PathVariable Long enrollmentId) {
 
         //implement
 

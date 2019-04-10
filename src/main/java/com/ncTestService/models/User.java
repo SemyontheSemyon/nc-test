@@ -8,6 +8,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @RequiredArgsConstructor
@@ -25,8 +26,10 @@ public class User {
     @Column(nullable = false, columnDefinition = "text")
     private String password;
 
-    @Column(nullable = false, columnDefinition = "integer")
-    private int Authority;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "role_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Set<Role> roles;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_info_id")
