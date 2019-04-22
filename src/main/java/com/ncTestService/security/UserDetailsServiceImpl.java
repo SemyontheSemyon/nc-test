@@ -2,7 +2,7 @@ package com.ncTestService.security;
 
 import com.ncTestService.models.Role;
 import com.ncTestService.models.User;
-import com.ncTestService.services.interfaces.UserService;
+import com.ncTestService.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

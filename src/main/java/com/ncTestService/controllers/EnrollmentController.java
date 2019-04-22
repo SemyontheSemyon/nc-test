@@ -1,31 +1,64 @@
 package com.ncTestService.controllers;
 
-
+import com.ncTestService.DTO.ECTFDTO;
+import com.ncTestService.converters.ECTFConverter;
 import com.ncTestService.models.Enrollment;
+import com.ncTestService.models.EnrollmentCityTestFormat;
+import com.ncTestService.services.ECTFService;
+import com.ncTestService.services.EnrollmentService;
+import com.ncTestService.services.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/enrollment")
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController("enrollment")
 public class EnrollmentController {
 
-    @PostMapping
-    public ResponseEntity createEnrollment(@RequestBody Enrollment enrollment) {
+    @Autowired
+    ECTFService ectfService;
 
-        //implement
+    @Autowired
+    EnrollmentService enrollmentService;
+
+    @Autowired
+    TestService testService;
+
+    @Autowired
+    ECTFConverter ectfConverter;
+
+    @GetMapping("/active")
+    List<ECTFDTO> getActive() {
+
+        List<EnrollmentCityTestFormat> list = ectfService.getActiveECTF();
+
+        List<ECTFDTO> DTOList = new ArrayList<>();
+
+        for(EnrollmentCityTestFormat ectf : list) {
+            DTOList.add(ectfConverter.convertToDTO(ectf));
+        }
+
+        return DTOList;
+    }
+
+    @PostMapping("/new")
+    ResponseEntity addEnrollment(@RequestBody ECTFDTO dto) {
+
+        EnrollmentCityTestFormat ectf = ectfConverter.convertFromDTO(dto);
+
+        ectf.setEnrollment(enrollmentService.addEnrollment(ectf.getEnrollment()));
+        ectf.setTestFormat(testService.addTestFormat(ectf.getTestFormat()));
+
+        ectfService.addECTF(ectf);
 
         return ResponseEntity.ok(HttpStatus.OK);
-    }
-
-    @GetMapping("/{enrollmentId}")
-    public Enrollment getEnrollment(@PathVariable Long enrollmentId) {
-
-        //implement
-
-        return new Enrollment();
 
     }
-
 
 }

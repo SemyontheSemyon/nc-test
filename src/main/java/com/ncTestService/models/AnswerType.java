@@ -19,4 +19,7 @@ public class AnswerType {
     @Column(nullable = false, columnDefinition = "text", unique =  true)
     private String type;
 
+    public AnswerType(String type) {
+        this.type = type;
+    }
 }

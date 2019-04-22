@@ -18,4 +18,7 @@ public class Role {
     @Column(nullable = false, columnDefinition = "text", unique = true)
     String name;
 
+    public Role(String name) {
+        this.name = name;
+    }
 }

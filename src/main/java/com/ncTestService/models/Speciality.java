@@ -23,4 +23,8 @@ public class Speciality {
     @Column(nullable = false, columnDefinition = "text")
     private String description;
 
+    public Speciality(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

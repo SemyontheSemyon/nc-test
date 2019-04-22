@@ -21,9 +21,12 @@ public class City {
     @Column(nullable = false, columnDefinition = "text", unique = true)
     private String name;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "country_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    Country country;
+    //@ManyToOne(fetch = FetchType.LAZY, optional = true)
+    //@JoinColumn(name = "country_id", nullable = true)
+    //@OnDelete(action = OnDeleteAction.CASCADE)
+    //Country country;
 
+    public City(String name) {
+        this.name = name;
+    }
 }

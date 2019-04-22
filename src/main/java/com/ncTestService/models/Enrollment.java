@@ -39,4 +39,13 @@ public class Enrollment {
 
     @Column(nullable = false, columnDefinition = "date", name = "created_at")
     private Date createdAt;
+
+    public Enrollment(Speciality speciality, Date appStart, Date appEnd, Date testStart, Date testEnd, Date createdAt) {
+        this.speciality = speciality;
+        this.appStart = appStart;
+        this.appEnd = appEnd;
+        this.testStart = testStart;
+        this.testEnd = testEnd;
+        this.createdAt = createdAt;
+    }
 }

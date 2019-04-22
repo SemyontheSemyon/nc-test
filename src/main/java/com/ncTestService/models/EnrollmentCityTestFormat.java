@@ -35,4 +35,13 @@ public class EnrollmentCityTestFormat {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private TestFormat testFormat;
 
+
+    @Column(columnDefinition = "boolean", name = "is_active")
+    private boolean active;
+
+    public EnrollmentCityTestFormat(Enrollment enrollment, City city, TestFormat testFormat) {
+        this.enrollment = enrollment;
+        this.city = city;
+        this.testFormat = testFormat;
+    }
 }

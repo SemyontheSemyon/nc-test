@@ -11,5 +11,6 @@ public interface EnrollmentCityTestFormatRepository extends CrudRepository<Enrol
 
     List<EnrollmentCityTestFormat> findByCity(City city);
     List<EnrollmentCityTestFormat> findByEnrollment(Enrollment enrollment);
+    List<EnrollmentCityTestFormat> findByActiveTrue();
 
 }

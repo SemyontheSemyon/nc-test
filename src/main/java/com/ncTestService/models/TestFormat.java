@@ -25,9 +25,8 @@ public class TestFormat {
     @Column(nullable = false, columnDefinition = "integer", name = "number_of_questions")
     private int numberOfQuestions;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "spec_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Speciality speciality;
-
+    public TestFormat(int time, int numberOfQuestions) {
+        this.time = time;
+        this.numberOfQuestions = numberOfQuestions;
+    }
 }
