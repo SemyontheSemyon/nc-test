@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController("enrollment")
+@RestController
 public class EnrollmentController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class EnrollmentController {
     @Autowired
     ECTFConverter ectfConverter;
 
-    @GetMapping("/active")
+    @GetMapping("enrollment/active")
     List<ECTFDTO> getActive() {
 
         List<EnrollmentCityTestFormat> list = ectfService.getActiveECTF();
@@ -47,7 +47,7 @@ public class EnrollmentController {
         return DTOList;
     }
 
-    @PostMapping("/new")
+    @PostMapping("enrollment/new")
     ResponseEntity addEnrollment(@RequestBody ECTFDTO dto) {
 
         EnrollmentCityTestFormat ectf = ectfConverter.convertFromDTO(dto);

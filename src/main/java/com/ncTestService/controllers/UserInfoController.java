@@ -7,18 +7,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("userinfo")
+@RestController
 public class UserInfoController {
 
     @Autowired
     UserService userService;
 
-    @GetMapping("/{userId}")
+    @GetMapping("userinfo/{userId}")
     UserInfo getUserInfo(@PathVariable Long userId) {
         return userService.getUserInfoByUserId(userId);
     }
 
-    @PutMapping("/update")
+    @PutMapping("userinfo/update")
     ResponseEntity updateUserInfo(@RequestBody UserInfo userInfo) {
         userService.updateUserInfo(userInfo);
         return ResponseEntity.ok(HttpStatus.OK);

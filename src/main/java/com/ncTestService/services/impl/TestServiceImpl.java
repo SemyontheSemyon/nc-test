@@ -93,6 +93,14 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
+    public void checkTestUser(TestUser testUser) {
+        String correctAns = testUser.getAnswer().getText().toLowerCase();
+        String userAns = testUser.getStudentAnswer().toLowerCase();
+
+        testUser.setCorrect(userAns.equals(correctAns));
+    }
+
+    @Override
     public Iterable<TestFormat> getAllTestFormats() {
         return testFormatRepository.findAll();
     }

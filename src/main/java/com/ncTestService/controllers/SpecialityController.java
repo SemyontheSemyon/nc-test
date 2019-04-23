@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("speciality")
+@RestController()
 public class SpecialityController {
 
     @Autowired
     SpecialityService specialityService;
 
-    @GetMapping("/specialities")
+    @GetMapping("specialities")
     List<Speciality> getSpecialities() {
         return (List)specialityService.getAll();
     }

@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("city")
+@RestController
 public class CityController {
 
     @Autowired
     CityService cityService;
 
-    @GetMapping("/cities")
+    @GetMapping("cities")
     List<City> getCities() {
         return cityService.findAll();
     }

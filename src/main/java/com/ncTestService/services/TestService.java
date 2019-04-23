@@ -21,6 +21,7 @@ public interface TestService {
     void addTestUser(TestUser testUser);
     void updateTestUser(TestUser testUser);
     void deleteTestUser(Long id);
+    void checkTestUser(TestUser testUser);
 
     Iterable<TestFormat> getAllTestFormats();
     TestFormat getTestFormat(Long id);
