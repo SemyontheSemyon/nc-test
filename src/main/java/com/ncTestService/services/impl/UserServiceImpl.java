@@ -12,25 +12,21 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     UserRepository userRepository;
-    UserTechRepository userTechRepository;
     UserInfoRepository userInfoRepository;
     CityRepository cityRepository;
     CountryRepository countryRepository;
     EnrollmentRepository enrollmentRepository;
     SpecialityRepository specialityRepository;
-    StudentStatusRepository studentStatusRepository;
     TechRepository techRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, UserTechRepository userTechRepository, UserInfoRepository userInfoRepository, CityRepository cityRepository, CountryRepository countryRepository, EnrollmentRepository enrollmentRepository, SpecialityRepository specialityRepository, StudentStatusRepository studentStatusRepository, TechRepository techRepository) {
+    public UserServiceImpl(UserRepository userRepository, UserInfoRepository userInfoRepository, CityRepository cityRepository, CountryRepository countryRepository, EnrollmentRepository enrollmentRepository, SpecialityRepository specialityRepository, TechRepository techRepository) {
         this.userRepository = userRepository;
-        this.userTechRepository = userTechRepository;
         this.userInfoRepository = userInfoRepository;
         this.cityRepository = cityRepository;
         this.countryRepository = countryRepository;
         this.enrollmentRepository = enrollmentRepository;
         this.specialityRepository = specialityRepository;
-        this.studentStatusRepository = studentStatusRepository;
         this.techRepository = techRepository;
     }
 
@@ -101,38 +97,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Iterable<UserTech> getAllUserTechs() {
-        return userTechRepository.findAll();
-    }
-
-    @Override
-    public UserTech getUserTech(Long id) {
-        return userTechRepository.findById(id).get();
-    }
-
-    @Override
-    public void addUserTech(UserTech userTech) {
-        userTechRepository.save(userTech);
-    }
-
-    @Override
-    public void updateUserTech(UserTech userTech) {
-        userTechRepository.save(userTech);
-    }
-
-    @Override
-    public void deleteUserTech(Long id) {
-        userTechRepository.deleteById(id);
-    }
-
-    @Override
     public List<UserInfo> findByUserName(String firstName, String lastName) {
         return userInfoRepository.findByFirstNameAndLastName(firstName, lastName);
-    }
-
-    @Override
-    public List<UserInfo> findByUserStatus(String userStatus) {
-        return userInfoRepository.findByStudentStatus(studentStatusRepository.findByName(userStatus));
     }
 
     @Override

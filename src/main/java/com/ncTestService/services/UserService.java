@@ -22,14 +22,7 @@ public interface UserService {
     void updateUserInfo(UserInfo userInfo);
     void deleteUserInfo(Long id);
 
-    Iterable<UserTech> getAllUserTechs();
-    UserTech getUserTech(Long id);
-    void addUserTech(UserTech userTech);
-    void updateUserTech(UserTech userTech);
-    void deleteUserTech(Long id);
-
     List<UserInfo> findByUserName(String firstName, String lastName);
-    List<UserInfo> findByUserStatus(String userStatus);
     List<UserInfo> findBySpeciality(String speciality);
 
 

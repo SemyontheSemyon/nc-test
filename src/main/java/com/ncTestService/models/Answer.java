@@ -26,11 +26,6 @@ public class Answer {
     boolean correct;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "answ_type_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    AnswerType answerType;
-
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "question_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     Question question;

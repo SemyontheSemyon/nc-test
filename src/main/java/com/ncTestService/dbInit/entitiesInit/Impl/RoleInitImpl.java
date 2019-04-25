@@ -20,7 +20,7 @@ public class RoleInitImpl implements RoleInit {
 
         List<Role> list = new ArrayList<>();
 
-        String[] roles = {"NAP", "PAP", "HR", "HR_PLUS", "ADMIN"};
+        String[] roles = {"ROLE_USER", "ROLE_MANAGER", "ROLE_ADMIN"};
 
         for(String role : roles) {
             list.add(new Role(role));

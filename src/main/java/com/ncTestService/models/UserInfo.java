@@ -25,10 +25,8 @@ public class UserInfo {
     @Column(nullable = false, columnDefinition = "text", unique =  true)
     private String email;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "status_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private StudentStatus studentStatus;
+    @Column(nullable = false, columnDefinition = "text", unique =  false)
+    private String studentStatus;
 
     @Column(nullable = false, columnDefinition = "text", name = "first_name")
     private String firstName;
@@ -46,7 +44,6 @@ public class UserInfo {
 
     @Column(nullable = false, columnDefinition = "integer")
     private int grade;
-
     @Column(columnDefinition = "text")
     private String university;
 

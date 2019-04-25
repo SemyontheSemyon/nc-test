@@ -37,7 +37,7 @@ public class Enrollment {
     @Column(nullable = false, columnDefinition = "date", name = "test_end")
     private Date testEnd;
 
-    @Column(nullable = false, columnDefinition = "date", name = "created_at")
+    @Column(nullable = true, columnDefinition = "date", name = "created_at")
     private Date createdAt;
 
     public Enrollment(Speciality speciality, Date appStart, Date appEnd, Date testStart, Date testEnd, Date createdAt) {

@@ -27,4 +27,9 @@ public class Question {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Speciality speciality;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "question_type_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private QuestionType questionType;
+
 }

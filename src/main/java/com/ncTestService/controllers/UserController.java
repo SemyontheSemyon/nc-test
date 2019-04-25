@@ -41,21 +41,21 @@ public class UserController {
     @Autowired
     AuthenticationManager authenticationManager;
 
-    @PostMapping("/user/new")
+    @PostMapping("api/auth/registration")
     public ResponseEntity createUser(@RequestBody User userReq) {
         User user = new User();
 
         user.setLogin(userReq.getLogin());
         user.setPassword(encoder.encode(userReq.getPassword()));
         user.setRoles(new HashSet<Role>());
-        user.getRoles().add(roleService.getRole("NAP"));
+        user.getRoles().add(roleService.getRole("ROLE_USER"));
 
         userService.addUser(user);
 
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @PostMapping("login")
+    @PostMapping("api/auth/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getLogin(), user.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);

@@ -23,13 +23,22 @@ public class DBInit implements ApplicationListener<ContextRefreshedEvent> {
     CityInit cityInit;
 
     @Autowired
-    AnswerTypeInit answerTypeInit;
+    QuestionTypeInit questionTypeInit;
 
     @Autowired
     RoleInit roleInit;
 
     @Autowired
     UserInit userInit;
+
+    @Autowired
+    EnrollmentInit enrollmentInit;
+
+    @Autowired
+    TestFormatInit testFormatInit;
+
+    @Autowired
+    ECTFInit ectfInit;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
@@ -41,9 +50,13 @@ public class DBInit implements ApplicationListener<ContextRefreshedEvent> {
         if(!inited && !done) {
             specialityInit.initSpecialities();
             cityInit.initCities();
-            answerTypeInit.initAnswerTypes();
+            questionTypeInit.initQuestionTypes();
             roleInit.initRoles();
             userInit.initUsers();
+            enrollmentInit.initEnrollments();
+            testFormatInit.initTestFormats();
+            ectfInit.initECTF();
+
 
             dbStatusRepository.save(new DBStatus(true));
             done = true;
