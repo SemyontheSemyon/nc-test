@@ -1,0 +1,9 @@
+A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.
+
+The role of a systems analyst can also be defined as a bridge between the business problems and the technology solutions. Here business problems can be anything about business systems, for example the model, process, or method. The technology solutions can be the use of technology architecture, tools, or software applications. System analysts are required to analyze, transform and ultimately resolve the business problems with the help of technology.
+
+BAs work in different industries such as finance, banking, insurance, telecoms, utilities, software services, government and so on. Due to working on projects at a fairly high level of abstraction, BAs can switch between any and all industries.
+
+The business domain subject areas BAs may work in include workflow, billing, mediation, provisioning and customer relationship management. The telecom industry has mapped these functional areas in their Telecommunications Operational Map (eTOM) model, Banking in the Information Framework (IFW) and Emergency agencies in the Prevention Preparation Response and Recovery model (PPRR).
+
+Finally, business analysts do not have a predefined and fixed role, as they can take part in operations scaling, sales planning, strategy devising or the developmental process.
