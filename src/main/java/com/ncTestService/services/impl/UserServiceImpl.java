@@ -7,6 +7,7 @@ import com.ncTestService.repositories.RoleRepository;
 import com.ncTestService.repositories.UserInfoRepository;
 import com.ncTestService.repositories.UserRepository;
 import com.ncTestService.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,13 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private UserInfoRepository userInfoRepository;
     private RoleRepository roleRepository;
+
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository, UserInfoRepository userInfoRepository, RoleRepository roleRepository) {
+        this.userRepository = userRepository;
+        this.userInfoRepository = userInfoRepository;
+        this.roleRepository = roleRepository;
+    }
 
     @Override
     public User getUser(String username) {

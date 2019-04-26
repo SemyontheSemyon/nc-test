@@ -31,10 +31,8 @@ public class UserInfo {
     @Column(nullable = false, columnDefinition = "text", name = "last_name")
     private String lastName;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "city_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private City city;
+    @Column(nullable = false, columnDefinition = "text", name = "city")
+    private String city;
 
     @Column(nullable = false, columnDefinition = "text")
     private String phone;

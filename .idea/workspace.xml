@@ -1,62 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe85be88-8006-46fe-87f9-ed32bceb1fdb" name="Default Changelist" comment="Test commit from idea 2">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="fe85be88-8006-46fe-87f9-ed32bceb1fdb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/models/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/models/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/AnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/AnswerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/CityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/EnrollmentCityTestFormatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/EnrollmentCityTestFormatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/EnrollmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/EnrollmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/QuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/TechRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/TechRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/TestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/TestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/UserInfoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/AnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/AnswerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/CityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/CityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/ECTFService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/ECTFService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/EnrollmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/EnrollmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/SpecialityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/SpecialityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/AnswerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/AnswerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/CityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/CityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/ECTFServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/ECTFServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/EnrollmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/EnrollmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/QuestionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/RoleServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/SpecialityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/SpecialityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/converters/Impl/UserInfoConv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/converters/Impl/UserInfoConv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/models/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/models/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/UserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/UserInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/UserInfoConv.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/UserInfoConv.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/models/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/models/City.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/AnswerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/AnswerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/EnrollmentCityTestFormatRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/EnrollmentCityTestFormatRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/EnrollmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/EnrollmentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/QuestionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/QuestionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/TestRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/TestRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/UserInfoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/repositories/UserInfoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/AnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/AnswerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/ECTFService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/ECTFService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/EnrollmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/EnrollmentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/QuestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/RoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/SpecialityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/SpecialityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/TestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/TestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/models/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/models/UserInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/AnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/AnswerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/CityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/CityServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/ECTFServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/ECTFServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/EnrollmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/EnrollmentServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/QuestionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/QuestionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/RoleServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/SpecialityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/SpecialityServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/TestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/TestServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data.sql" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,108 +47,33 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/AnswerRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/models/UserInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="306">
+              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/EnrollmentServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/DTO/UserInfoDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/QuestionServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/SpecialityServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="48" />
-              <folding>
-                <element signature="e#762#763#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/TestServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="217">
+              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/converters/Impl/UserInfoConv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/AnswerServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/CityServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding>
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/ECTFServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="493">
+              <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -224,7 +115,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/CityServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/TestServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/security/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserInfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/models/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ncTestService/converters/Impl/UserInfoConv.java" />
       </list>
     </option>
   </component>
@@ -242,8 +137,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,7 +179,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ncTestService" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ncTestService" type="b2602c69:ProjectViewProjectNode" />
@@ -293,7 +188,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ncTestService" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="converters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ncTestService" type="b2602c69:ProjectViewProjectNode" />
@@ -302,8 +197,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ncTestService" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="converters" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ncTestService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nc-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ncTestService" type="462c0819:PsiDirectoryNode" />
+              <item name="DTO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ncTestService" type="b2602c69:ProjectViewProjectNode" />
@@ -382,6 +286,7 @@
       <option name="presentableId" value="Default" />
       <updated>1556292122680</updated>
       <workItem from="1556292124758" duration="1640000" />
+      <workItem from="1556302784668" duration="682000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit from idea 1">
       <created>1556293597054</created>
@@ -390,17 +295,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556293597054</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cleanup">
+      <created>1556300509022</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556300509022</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3723000" />
+    <option name="totallyTimeSpent" value="6429000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32822758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -410,7 +322,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3261105" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32932165" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -422,7 +334,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32932165" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.32932165" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32932165" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -466,45 +378,32 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Test commit from idea 1" />
     <MESSAGE value="Test commit from idea 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test commit from idea 2" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/ECTFService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/CityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/AnswerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/security/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/security/UserDetailsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -659,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/models/City.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/models/Answer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -677,13 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/DTO/UserInfoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -739,13 +624,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6fc20557-04e3-40e3-8a95-581a30718378/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/models/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/models/QuestionType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -753,31 +631,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/repositories/AnswerRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/AnswerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/CityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/QuestionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/SpecialityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -813,27 +664,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/QuestionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/TestServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="85">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/models/City.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="255">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/security/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/CityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/services/impl/AnswerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/models/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/DTO/UserInfoDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/converters/Impl/UserInfoConv.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
         </state>
       </provider>
     </entry>
