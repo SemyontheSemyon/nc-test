@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 @Component
 public class UserInfoConv {
@@ -39,8 +40,10 @@ public class UserInfoConv {
         User user = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 
         UserInfo userInfo;
-        if (userService.getUserInfoByUserId(user.getId()) != null) {
-            userInfo = userService.getUserInfoByUserId(user.getId());
+
+        Optional<UserInfo> userInfoOpt = userService.getUserInfoByUserId(user.getId());
+        if (userInfoOpt.isPresent()) {
+            userInfo = userInfoOpt.get();
         } else {
             userInfo = new UserInfo();
         }
@@ -52,7 +55,7 @@ public class UserInfoConv {
         userInfo.setUniversity(userInfoDto.getUniversity());
         userInfo.setGrade(userInfoDto.getGrade());
         userInfo.setDepartment(userInfoDto.getDepartment());
-        userInfo.setSpeciality(specialityService.getSpeciality(userInfoDto.getSpeciality()));
+        userInfo.setSpeciality(userInfoDto.getSpeciality());
         userInfo.setPhone(userInfoDto.getPhone());
 
         userInfo.setUser(user);
@@ -72,7 +75,7 @@ public class UserInfoConv {
         userInfoDto.setCity(userInfo.getCity().getName());
         userInfoDto.setUniversity(userInfo.getUniversity());
         userInfoDto.setDepartment(userInfo.getDepartment());
-        userInfoDto.setSpeciality(userInfo.getSpeciality().getName());
+        userInfoDto.setSpeciality(userInfo.getSpeciality());
         userInfoDto.setGrade(userInfo.getGrade());
         userInfoDto.setPhone(userInfo.getPhone());
 

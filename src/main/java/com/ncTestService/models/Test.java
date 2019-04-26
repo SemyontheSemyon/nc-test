@@ -26,11 +26,6 @@ public class Test {
     private boolean passed;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "test_format_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private TestFormat testFormat;
-
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;

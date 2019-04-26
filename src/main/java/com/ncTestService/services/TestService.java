@@ -14,7 +14,8 @@ public interface TestService {
     void addTest(Test test);
     void updateTest(Test test);
     void deleteTest(Long id);
-    void createTest(Long userId, TestFormat testFormat);
+    void createTest(Long userId);
+    void checkTest(List<TestUser> testUsers, Test test, TestFormat testFormat);
 
     Iterable<TestUser> getAllTestUsers();
     TestUser getTestUser(Long id);
@@ -30,6 +31,6 @@ public interface TestService {
     void deleteTestFormat(Long id);
 
     List<Question> generateTest(int questionsNum);
-    List<Question> generateTest(int questionsNum, String specialityName);
+    List<Question> generateTest(int questionsNum, Speciality speciality);
     boolean validateQuestion(String answer);
 }

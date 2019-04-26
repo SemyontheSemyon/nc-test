@@ -47,10 +47,6 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         enrollmentRepository.deleteById(id);
     }
 
-    @Override
-    public List<Enrollment> findByAppStart(Date appStart) {
-        return enrollmentRepository.findByAppStart(appStart);
-    }
 
     @Override
     public List<Enrollment> findBySpeciality(String speciality) {

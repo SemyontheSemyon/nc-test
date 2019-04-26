@@ -15,14 +15,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class UserController {
 
@@ -45,7 +43,7 @@ public class UserController {
     public ResponseEntity createUser(@RequestBody User userReq) {
         User user = new User();
 
-        user.setLogin(userReq.getLogin());
+        user.setEmail(userReq.getEmail());
         user.setPassword(encoder.encode(userReq.getPassword()));
         user.setRoles(new HashSet<Role>());
         user.getRoles().add(roleService.getRole("ROLE_USER"));
@@ -57,7 +55,7 @@ public class UserController {
 
     @PostMapping("api/auth/login")
     public ResponseEntity<?> login(@RequestBody User user) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getLogin(), user.getPassword()));
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = tokenProvider.generateJwtToken(authentication);
         System.out.println(jwt);

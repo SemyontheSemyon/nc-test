@@ -24,9 +24,13 @@ public class TestFormat {
 
     @Column(nullable = false, columnDefinition = "integer", name = "number_of_questions")
     private int numberOfQuestions;
+    
+    @Column(nullable = false, columnDefinition = "integer")
+    private int threshold;
 
-    public TestFormat(int time, int numberOfQuestions) {
+    public TestFormat(int time, int numberOfQuestions, int threshold) {
         this.time = time;
         this.numberOfQuestions = numberOfQuestions;
+        this.threshold = threshold;
     }
 }

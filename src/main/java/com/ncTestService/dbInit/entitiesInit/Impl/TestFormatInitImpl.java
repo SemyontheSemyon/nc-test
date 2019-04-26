@@ -15,7 +15,7 @@ public class TestFormatInitImpl implements TestFormatInit {
     @Override
     public void initTestFormats() {
 
-        testFormatRepository.save(new TestFormat(10, 10));
+        testFormatRepository.save(new TestFormat(10, 10, 7));
 
     }
 }

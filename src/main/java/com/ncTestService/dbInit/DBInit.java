@@ -1,6 +1,8 @@
 package com.ncTestService.dbInit;
 
 import com.ncTestService.dbInit.entitiesInit.*;
+import com.ncTestService.dbInit.entitiesInit.Impl.AnswerInitImpl;
+import com.ncTestService.dbInit.entitiesInit.Impl.QuestionInitImpl;
 import com.ncTestService.models.DBStatus;
 import com.ncTestService.repositories.DBStatusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,12 @@ public class DBInit implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     ECTFInit ectfInit;
 
+    @Autowired
+    QuestionInitImpl questionInit;
+
+    @Autowired
+    AnswerInitImpl answerInit;
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
@@ -56,6 +64,8 @@ public class DBInit implements ApplicationListener<ContextRefreshedEvent> {
             enrollmentInit.initEnrollments();
             testFormatInit.initTestFormats();
             ectfInit.initECTF();
+            questionInit.initQuestions();
+            answerInit.initAnswers();
 
 
             dbStatusRepository.save(new DBStatus(true));

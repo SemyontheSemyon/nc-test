@@ -25,22 +25,22 @@ public class Enrollment {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Speciality speciality;
 
-    @Column(nullable = false, columnDefinition = "date", name = "app_start")
-    private Date appStart;
+    @Column(nullable = false, columnDefinition = "text", name = "app_start")
+    private String appStart;
 
-    @Column(nullable = false, columnDefinition = "date", name = "app_end")
-    private Date appEnd;
+    @Column(nullable = false, columnDefinition = "text", name = "app_end")
+    private String appEnd;
 
-    @Column(nullable = false, columnDefinition = "date", name = "test_start")
-    private Date testStart;
+    @Column(nullable = false, columnDefinition = "text", name = "test_start")
+    private String testStart;
 
-    @Column(nullable = false, columnDefinition = "date", name = "test_end")
-    private Date testEnd;
+    @Column(nullable = false, columnDefinition = "text", name = "test_end")
+    private String testEnd;
 
-    @Column(nullable = true, columnDefinition = "date", name = "created_at")
-    private Date createdAt;
+    @Column(nullable = true, columnDefinition = "text", name = "created_at")
+    private String createdAt;
 
-    public Enrollment(Speciality speciality, Date appStart, Date appEnd, Date testStart, Date testEnd, Date createdAt) {
+    public Enrollment(Speciality speciality, String appStart, String appEnd, String testStart, String testEnd, String createdAt) {
         this.speciality = speciality;
         this.appStart = appStart;
         this.appEnd = appEnd;

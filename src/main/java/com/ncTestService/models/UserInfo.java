@@ -22,9 +22,6 @@ public class UserInfo {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @Column(nullable = false, columnDefinition = "text", unique =  true)
-    private String email;
-
     @Column(nullable = false, columnDefinition = "text", unique =  false)
     private String studentStatus;
 
@@ -44,21 +41,15 @@ public class UserInfo {
 
     @Column(nullable = false, columnDefinition = "integer")
     private int grade;
+
     @Column(columnDefinition = "text")
     private String university;
 
     @Column(columnDefinition = "text")
     private String department;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "speciality_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Speciality speciality;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "source_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Source source;
+    @Column(columnDefinition = "text")
+    private String speciality;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "enrollment_id")

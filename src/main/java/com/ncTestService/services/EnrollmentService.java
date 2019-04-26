@@ -18,7 +18,6 @@ public interface EnrollmentService {
     void deleteEnrollment(Long id);
 
 
-    List<Enrollment> findByAppStart(Date appStart);
     List<Enrollment> findBySpeciality(String speciality);
     List<Enrollment> findFirstFive(Speciality speciality);
 

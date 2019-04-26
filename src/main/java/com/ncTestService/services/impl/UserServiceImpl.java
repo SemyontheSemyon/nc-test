@@ -4,9 +4,11 @@ import com.ncTestService.models.*;
 import com.ncTestService.repositories.*;
 import com.ncTestService.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -42,7 +44,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String username) {
-        return userRepository.findByLogin(username);
+        return userRepository.findByEmail(username);
+    }
+
+    @Override
+    public User getPrincipialUser() {
+        return userRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 
     @Override
@@ -76,9 +83,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserInfo getUserInfoByUserId(Long userId) {
+    public Optional<UserInfo> getUserInfoByUserId(Long userId) {
         User user = userRepository.findById(userId).get();
-        return userInfoRepository.findByUser(user).get();
+        return userInfoRepository.findByUser(user);
     }
 
     @Override

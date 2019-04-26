@@ -19,7 +19,7 @@ public class Answer {
     @GeneratedValue
     Long id;
 
-    @Column(nullable = false, columnDefinition = "text", unique = true)
+    @Column(nullable = false, columnDefinition = "text", unique = false)
     String text;
 
     @Column(nullable = false, columnDefinition = "boolean")
@@ -30,4 +30,8 @@ public class Answer {
     @OnDelete(action = OnDeleteAction.CASCADE)
     Question question;
 
+    public Answer(String text, boolean correct) {
+        this.text = text;
+        this.correct = correct;
+    }
 }

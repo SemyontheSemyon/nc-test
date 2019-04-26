@@ -36,6 +36,7 @@ public class ECTFConverterImpl implements ECTFConverter {
         ectfdto.setCreatedAt(enrollment.getCreatedAt());
         ectfdto.setNumberOfQuestions(testFormat.getNumberOfQuestions());
         ectfdto.setTime(testFormat.getTime());
+        ectfdto.setThreshold(testFormat.getThreshold());
 
         return ectfdto;
     }
@@ -54,7 +55,8 @@ public class ECTFConverterImpl implements ECTFConverter {
         City city = cityService.findByName(ectfdto.getCity());
         TestFormat testFormat = new TestFormat(
                 ectfdto.getTime(),
-                ectfdto.getNumberOfQuestions());
+                ectfdto.getNumberOfQuestions(),
+                ectfdto.getThreshold());
 
         EnrollmentCityTestFormat ectf = new EnrollmentCityTestFormat(enrollment, city, testFormat);
 

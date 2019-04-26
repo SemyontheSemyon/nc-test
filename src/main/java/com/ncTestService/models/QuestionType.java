@@ -1,11 +1,13 @@
 package com.ncTestService.models;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@RequiredArgsConstructor
 @Table(name = "question_type")
 public class QuestionType {
 

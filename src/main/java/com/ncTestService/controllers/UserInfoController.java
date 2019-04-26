@@ -12,7 +12,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class UserInfoController {
 
@@ -25,15 +27,12 @@ public class UserInfoController {
     @GetMapping("/api/profile")
     public ResponseEntity<?> getProfile() {
 
-        User user = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = userService.getPrincipialUser();
 
-        UserInfo userInfo;
-        if (userService.getUserInfoByUserId(user.getId()) != null) {
-            userInfo = userService.getUserInfoByUserId(user.getId());
-        } else {
-            userInfo = new UserInfo();
-        }
-            return new ResponseEntity(userInfoConv.userInfoToDto(userInfo), HttpStatus.OK);
+        Optional<UserInfo> userInfo = userService.getUserInfoByUserId(user.getId());
+        if(userInfo.isPresent())
+
+            return new ResponseEntity(userInfoConv.userInfoToDto(userInfo.get()), HttpStatus.OK);
         return new ResponseEntity(new UserInfoDTO(), HttpStatus.OK);
     }
 

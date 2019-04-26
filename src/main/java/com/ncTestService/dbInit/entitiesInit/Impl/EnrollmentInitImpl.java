@@ -38,14 +38,20 @@ public class EnrollmentInitImpl implements EnrollmentInit {
 
         List<Speciality> specialities = (List)specialityRepository.findAll();
 
+
+
+        System.out.println("ENROLLMENT");
+
         for(int i = 0; i<specialities.size(); i++) {
 
             Enrollment enrollment = new Enrollment();
-            enrollment.setAppStart(dateFormat.parse(months[i], new ParsePosition(0)));
-            enrollment.setAppEnd(dateFormat.parse(months[i+1], new ParsePosition(0)));
-            enrollment.setTestStart(dateFormat.parse(months[i+2], new ParsePosition(0)));
-            enrollment.setTestEnd(dateFormat.parse(months[i+3], new ParsePosition(0)));
+            
+            enrollment.setAppStart(months[i]);
+            enrollment.setAppEnd(months[i+1]);
+            enrollment.setTestStart(months[i+2]);
+            enrollment.setTestEnd(months[i+3]);
             enrollment.setSpeciality(specialities.get(i));
+            enrollmentRepository.save(enrollment);
 
         }
 

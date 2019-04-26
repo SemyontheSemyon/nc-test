@@ -3,6 +3,7 @@ package com.ncTestService.services.impl;
 import com.ncTestService.models.*;
 import com.ncTestService.repositories.*;
 import com.ncTestService.services.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,12 +13,25 @@ import java.util.List;
 @Service
 public class TestServiceImpl implements TestService {
 
+    @Autowired
     TestRepository testRepository;
+
+    @Autowired
     TestUserRepository testUserRepository;
+
+    @Autowired
     TestFormatRepository testFormatRepository;
+
+    @Autowired
     QuestionRepository questionRepository;
+
+    @Autowired
     AnswerRepository answerRepository;
+
+    @Autowired
     SpecialityRepository specialityRepository;
+
+    @Autowired
     UserRepository userRepository;
 
     @Override
@@ -54,17 +68,29 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public void createTest(Long userId, TestFormat testFormat) {
+    public void createTest(Long userId) {
         User user = userRepository.findById(userId).get();
         Date date = new Date();
 
         Test test = new Test();
         test.setTakenAt(date);
         test.setPassed(false);
-        test.setTestFormat(testFormat);
         test.setUser(user);
 
         testRepository.save(test);
+    }
+
+    @Override
+    public void checkTest(List<TestUser> testUsers, Test test, TestFormat testFormat) {
+        int correct = 0;
+
+        for(TestUser testUser : testUsers) {
+            if(testUser.isCorrect()) correct++;
+        }
+
+        System.out.println(correct);
+
+        test.setPassed(correct >= testFormat.getThreshold());
     }
 
     @Override
@@ -140,10 +166,9 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public List<Question> generateTest(int questionsNum, String specialityName) {
+    public List<Question> generateTest(int questionsNum, Speciality speciality) {
 
-        Speciality speciality = specialityRepository.findByName(specialityName);
-        List<Question> questionList = questionRepository.findBySpeciality(speciality);
+        List<Question> questionList = (List)questionRepository.findAllBySpeciality(speciality);
         List<Question> testList = new ArrayList<>();
 
         for(int i = 0; i<questionsNum; i++) {

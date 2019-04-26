@@ -39,8 +39,9 @@ public class ECTFInitImpl implements ECTFInit {
         for(City city : cities) {
 
             for(Enrollment enrollment : enrollments) {
-
-                repository.save(new EnrollmentCityTestFormat(enrollment, city, testFormats.get(0)));
+                EnrollmentCityTestFormat ectf = new EnrollmentCityTestFormat(enrollment, city, testFormats.get(0));
+                ectf.setActive(true);
+                repository.save(ectf);
 
             }
 

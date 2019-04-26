@@ -9,8 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface EnrollmentRepository extends CrudRepository<Enrollment, Long> {
-    Enrollment findByAppStartAndSpeciality(Date appStart, Speciality speciality);
     List<Enrollment> findBySpeciality(Speciality speciality);
-    List<Enrollment> findByAppStart(Date appStart);
     List<Enrollment> findFirst5BySpecialityOrderByAppStartDesc(Speciality speciality);
 }

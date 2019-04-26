@@ -24,7 +24,7 @@ public class QuestionServiceImpl implements QuestionService {
 
         Speciality speciality = specialityRepository.findByName(specialityName);
 
-        return questionRepository.findBySpeciality(speciality);
+        return (List)questionRepository.findBySpeciality(speciality);
     }
 
     @Override

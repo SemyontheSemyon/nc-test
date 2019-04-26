@@ -21,7 +21,7 @@ public class User {
     private Long id;
 
     @Column(nullable = false, columnDefinition = "text", unique = true)
-    private String login;
+    private String email;
 
     @Column(nullable = false, columnDefinition = "text")
     private String password;

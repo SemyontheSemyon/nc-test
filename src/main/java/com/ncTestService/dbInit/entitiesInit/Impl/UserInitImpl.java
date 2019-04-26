@@ -6,6 +6,7 @@ import com.ncTestService.models.User;
 import com.ncTestService.repositories.RoleRepository;
 import com.ncTestService.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -21,38 +22,26 @@ public class UserInitImpl implements UserInit {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    BCryptPasswordEncoder encoder;
+
     @Override
     public void initUsers() {
 
         List<User> list = new ArrayList<>();
 
         User userNAP = new User();
-        userNAP.setLogin("NAP");
-        userNAP.setPassword("NAP");
+        userNAP.setEmail("USER");
+        userNAP.setPassword(encoder.encode("123456"));
         userNAP.setRoles(new HashSet<>());
-        userNAP.getRoles().add(roleRepository.findByName("NAP"));
+        userNAP.getRoles().add(roleRepository.findByName("ROLE_USER"));
 
         User userPAP = new User();
-        userPAP.setLogin("PAP");
-        userPAP.setPassword("PAP");
+        userPAP.setEmail("HR");
+        userPAP.setPassword(encoder.encode("123456"));
         userPAP.setRoles(new HashSet<>());
-        userPAP.getRoles().add(roleRepository.findByName("PAP"));
+        userPAP.getRoles().add(roleRepository.findByName("ROLE_MANAGER"));
 
-        User userHR = new User();
-        userHR.setLogin("HR");
-        userHR.setPassword("HR");
-        userHR.setRoles(new HashSet<>());
-        userHR.getRoles().add(roleRepository.findByName("HR"));
-
-        User userHRPlus = new User();
-        userHRPlus.setLogin("HRPlus");
-        userHRPlus.setPassword("HRPlus");
-        userHRPlus.setRoles(new HashSet<>());
-        userHRPlus.getRoles().add(roleRepository.findByName("HR_PLUS"));
-        userHRPlus.getRoles().add(roleRepository.findByName("HR"));
-
-        list.add(userHR);
-        list.add(userHRPlus);
         list.add(userNAP);
         list.add(userPAP);
 

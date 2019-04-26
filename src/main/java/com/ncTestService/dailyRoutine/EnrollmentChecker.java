@@ -28,7 +28,7 @@ public class EnrollmentChecker {
 
         for(EnrollmentCityTestFormat ectf : list) {
 
-            ectf.setActive(ectf.getEnrollment().getAppEnd().after(now));
+            //ectf.setActive(ectf.getEnrollment().getAppEnd().after(now));
 
         }
 

@@ -11,14 +11,15 @@ public class ECTFDTO {
     private String speciality;
     private String city;
 
-    private Date appStart;
-    private Date appEnd;
-    private Date testStart;
-    private Date testEnd;
-    private Date createdAt;
+    private String appStart;
+    private String appEnd;
+    private String testStart;
+    private String testEnd;
+    private String createdAt;
 
     private int time;
     private int numberOfQuestions;
+    private int threshold;
 
 
 }
