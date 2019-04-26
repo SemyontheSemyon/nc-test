@@ -1,55 +1,29 @@
 package com.ncTestService.services.impl;
 
 import com.ncTestService.models.*;
-import com.ncTestService.repositories.*;
+import com.ncTestService.repositories.QuestionRepository;
+import com.ncTestService.repositories.TestFormatRepository;
+import com.ncTestService.repositories.TestRepository;
+import com.ncTestService.repositories.TestUserRepository;
 import com.ncTestService.services.TestService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
 public class TestServiceImpl implements TestService {
 
-    @Autowired
-    TestRepository testRepository;
+    private TestRepository testRepository;
+    private TestUserRepository testUserRepository;
+    private TestFormatRepository testFormatRepository;
+    private QuestionRepository questionRepository;
 
-    @Autowired
-    TestUserRepository testUserRepository;
-
-    @Autowired
-    TestFormatRepository testFormatRepository;
-
-    @Autowired
-    QuestionRepository questionRepository;
-
-    @Autowired
-    AnswerRepository answerRepository;
-
-    @Autowired
-    SpecialityRepository specialityRepository;
-
-    @Autowired
-    UserRepository userRepository;
-
-    @Override
-    public Iterable<Test> getAllTests() {
-        return testRepository.findAll();
-    }
-
-    @Override
-    public Test getTest(Long id) {
-        return testRepository.findById(id).get();
-    }
-
-    @Override
-    public Test getTestByUserId(Long userId) {
-        User user = userRepository.findById(userId).get();
-
-        return testRepository.findByUser(user);
-
+    public TestServiceImpl(TestRepository testRepository, TestUserRepository testUserRepository, TestFormatRepository testFormatRepository, QuestionRepository questionRepository) {
+        this.testRepository = testRepository;
+        this.testUserRepository = testUserRepository;
+        this.testFormatRepository = testFormatRepository;
+        this.questionRepository = questionRepository;
     }
 
     @Override
@@ -63,29 +37,11 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public void deleteTest(Long id) {
-        testRepository.deleteById(id);
-    }
-
-    @Override
-    public void createTest(Long userId) {
-        User user = userRepository.findById(userId).get();
-        Date date = new Date();
-
-        Test test = new Test();
-        test.setTakenAt(date);
-        test.setPassed(false);
-        test.setUser(user);
-
-        testRepository.save(test);
-    }
-
-    @Override
     public void checkTest(List<TestUser> testUsers, Test test, TestFormat testFormat) {
         int correct = 0;
 
-        for(TestUser testUser : testUsers) {
-            if(testUser.isCorrect()) correct++;
+        for (TestUser testUser : testUsers) {
+            if (testUser.isCorrect()) correct++;
         }
 
         System.out.println(correct);
@@ -94,28 +50,8 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public Iterable<TestUser> getAllTestUsers() {
-        return testUserRepository.findAll();
-    }
-
-    @Override
-    public TestUser getTestUser(Long id) {
-        return testUserRepository.findById(id).get();
-    }
-
-    @Override
     public void addTestUser(TestUser testUser) {
         testUserRepository.save(testUser);
-    }
-
-    @Override
-    public void updateTestUser(TestUser testUser) {
-        testUserRepository.save(testUser);
-    }
-
-    @Override
-    public void deleteTestUser(Long id) {
-        testUserRepository.deleteById(id);
     }
 
     @Override
@@ -127,53 +63,19 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public Iterable<TestFormat> getAllTestFormats() {
-        return testFormatRepository.findAll();
-    }
-
-    @Override
-    public TestFormat getTestFormat(Long id) {
-        return testFormatRepository.findById(id).get();
-    }
-
-    @Override
     public TestFormat addTestFormat(TestFormat testFormat) {
         return testFormatRepository.save(testFormat);
     }
 
     @Override
-    public TestFormat updateTestFormat(TestFormat testFormat) {
-        return testFormatRepository.save(testFormat);
-    }
-
-    @Override
-    public void deleteTestFormat(Long id) {
-        testFormatRepository.deleteById(id);
-    }
-
-    @Override
-    public List<Question> generateTest(int questionsNum) {
-        Long qty = questionRepository.count();
-        List<Question> testQuestions = new ArrayList();
-        Long idx = Long.valueOf((long) (Math.random() * qty) + 1);
-
-        for (int i = 0; i < questionsNum; i++) {
-            testQuestions.add(questionRepository.findById(idx).get());
-            idx = Long.valueOf((long) (Math.random() * qty) + 1);
-        }
-
-        return testQuestions;
-    }
-
-    @Override
     public List<Question> generateTest(int questionsNum, Speciality speciality) {
 
-        List<Question> questionList = (List)questionRepository.findAllBySpeciality(speciality);
+        List<Question> questionList = (List) questionRepository.findAllBySpeciality(speciality);
         List<Question> testList = new ArrayList<>();
 
-        for(int i = 0; i<questionsNum; i++) {
+        for (int i = 0; i < questionsNum; i++) {
 
-            Question q = questionList.get((int)(Math.random() * questionList.size()) + 1);
+            Question q = questionList.get((int) (Math.random() * questionList.size()) + 1);
             testList.add(q);
             questionList.remove(q);
         }
@@ -182,7 +84,4 @@ public class TestServiceImpl implements TestService {
 
     }
 
-    public boolean validateQuestion(String answer){
-        return answerRepository.findByText(answer).isCorrect();
-    }
 }

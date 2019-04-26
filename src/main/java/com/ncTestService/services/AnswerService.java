@@ -7,10 +7,8 @@ import java.util.List;
 
 public interface AnswerService {
 
-    Answer getAnswer(Long id);
     Answer getCorrectAnswer(Question question);
-    List<Answer> getAnswer(Question question);
-    List<List<Answer>> getAnswers(List<Question> questionList);
 
+    List<Answer> getAnswer(Question question);
 
 }
