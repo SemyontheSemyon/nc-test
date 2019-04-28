@@ -7,10 +7,12 @@ import java.util.List;
 
 public interface AnswerService {
 
+    Answer saveAnswer(Answer answer);
     Answer getAnswer(Long id);
     Answer getCorrectAnswer(Question question);
     List<Answer> getAnswer(Question question);
     List<List<Answer>> getAnswers(List<Question> questionList);
+    void deleteAll(Iterable<Answer> answers);
 
 
 }

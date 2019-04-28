@@ -8,6 +8,7 @@ import com.ncTestService.services.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -24,6 +25,7 @@ public class QuestionServiceImpl implements QuestionService {
 
         Speciality speciality = specialityRepository.findByName(specialityName);
 
+        if(speciality == null) return new ArrayList<>();
         return (List)questionRepository.findBySpeciality(speciality);
     }
 
@@ -32,5 +34,15 @@ public class QuestionServiceImpl implements QuestionService {
 
         return questionRepository.findById(id).get();
 
+    }
+
+    @Override
+    public Question saveQuestion(Question question) {
+        return questionRepository.save(question);
+    }
+
+    @Override
+    public void deleteQuestion(Question question) {
+        questionRepository.delete(question);
     }
 }

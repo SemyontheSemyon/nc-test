@@ -17,6 +17,11 @@ public class AnswerServiceImpl implements AnswerService {
     AnswerRepository answerRepository;
 
     @Override
+    public Answer saveAnswer(Answer answer) {
+        return answerRepository.save(answer);
+    }
+
+    @Override
     public Answer getAnswer(Long id) {
         return answerRepository.findById(id).get();
     }
@@ -45,5 +50,10 @@ public class AnswerServiceImpl implements AnswerService {
 
         return answersList;
 
+    }
+
+    @Override
+    public void deleteAll(Iterable<Answer> answers) {
+        answerRepository.deleteAll(answers);
     }
 }

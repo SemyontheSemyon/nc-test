@@ -27,7 +27,7 @@ public class QuestionConv {
 
         List<Answer> answers = answerRepository.findByQuestion(question);
 
-        dto.setQuestionId(question.getId());
+        dto.setId(question.getId());
         dto.setType(question.getQuestionType().getName());
         dto.setText(question.getText());
         dto.setAnswers(new ArrayList<>());
