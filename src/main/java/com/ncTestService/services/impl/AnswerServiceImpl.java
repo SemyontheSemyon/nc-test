@@ -7,15 +7,16 @@ import com.ncTestService.services.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class AnswerServiceImpl implements AnswerService {
 
     @Autowired
-    AnswerRepository answerRepository;
-
+    public AnswerServiceImpl(AnswerRepository answerRepository) {
+        this.answerRepository = answerRepository;
+    }
+  
     @Override
     public Answer saveAnswer(Answer answer) {
         return answerRepository.save(answer);
@@ -24,7 +25,6 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public Answer getAnswer(Long id) {
         return answerRepository.findById(id).get();
-    }
 
     @Override
     public Answer getCorrectAnswer(Question question) {
@@ -56,4 +56,5 @@ public class AnswerServiceImpl implements AnswerService {
     public void deleteAll(Iterable<Answer> answers) {
         answerRepository.deleteAll(answers);
     }
+
 }

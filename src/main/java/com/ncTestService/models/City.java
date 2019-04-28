@@ -1,10 +1,7 @@
 package com.ncTestService.models;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -20,11 +17,6 @@ public class City {
 
     @Column(nullable = false, columnDefinition = "text", unique = true)
     private String name;
-
-    //@ManyToOne(fetch = FetchType.LAZY, optional = true)
-    //@JoinColumn(name = "country_id", nullable = true)
-    //@OnDelete(action = OnDeleteAction.CASCADE)
-    //Country country;
 
     public City(String name) {
         this.name = name;

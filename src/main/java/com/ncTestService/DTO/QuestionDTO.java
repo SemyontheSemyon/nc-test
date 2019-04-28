@@ -16,6 +16,10 @@ public class QuestionDTO {
     String text;
 
     List<String> answers;
+    
+    String speciality;
+    
+    String correctAnswer;
 
     String correctAnswer;
 

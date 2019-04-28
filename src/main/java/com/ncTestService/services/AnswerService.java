@@ -14,5 +14,4 @@ public interface AnswerService {
     List<List<Answer>> getAnswers(List<Question> questionList);
     void deleteAll(Iterable<Answer> answers);
 
-
 }

@@ -9,8 +9,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class SpecialityServiceImpl implements SpecialityService {
 
+    private SpecialityRepository specialityRepository;
+
     @Autowired
-    SpecialityRepository specialityRepository;
+    public SpecialityServiceImpl(SpecialityRepository specialityRepository) {
+        this.specialityRepository = specialityRepository;
+    }
 
     @Override
     public Iterable<Speciality> getAll() {
@@ -27,13 +31,4 @@ public class SpecialityServiceImpl implements SpecialityService {
         return specialityRepository.findByName(name);
     }
 
-    @Override
-    public void addSpeciality(Speciality speciality) {
-        specialityRepository.save(speciality);
-    }
-
-    @Override
-    public void updateSpeciality(Speciality speciality) {
-        specialityRepository.save(speciality);
-    }
 }
