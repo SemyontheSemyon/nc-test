@@ -7,9 +7,11 @@ import java.util.List;
 @Data
 public class QuestionDTO {
 
-    Long questionId;
+    Long id;
 
     String type;
+
+    String speciality;
 
     String text;
 
@@ -17,6 +19,8 @@ public class QuestionDTO {
     
     String speciality;
     
+    String correctAnswer;
+
     String correctAnswer;
 
 }
