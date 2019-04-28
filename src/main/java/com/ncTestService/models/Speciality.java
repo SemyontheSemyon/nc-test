@@ -2,7 +2,6 @@ package com.ncTestService.models;
 
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
@@ -21,10 +20,14 @@ public class Speciality {
     private String name;
 
     @Column(nullable = false, columnDefinition = "text")
-    private String description;
+    private String shortDescription;
 
-    public Speciality(String name, String description) {
+    @Column(nullable = false, columnDefinition = "text")
+    private String fullDescription;
+
+    public Speciality(String name, String shortDescription, String fullDescription) {
         this.name = name;
-        this.description = description;
+        this.shortDescription = shortDescription;
+        this.fullDescription = fullDescription;
     }
 }
