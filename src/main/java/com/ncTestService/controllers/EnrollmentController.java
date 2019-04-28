@@ -3,6 +3,7 @@ package com.ncTestService.controllers;
 import com.ncTestService.DTO.ECTFDTO;
 import com.ncTestService.converters.ECTFConverter;
 import com.ncTestService.models.EnrollmentCityTestFormat;
+import com.ncTestService.services.CityService;
 import com.ncTestService.services.ECTFService;
 import com.ncTestService.services.EnrollmentService;
 import com.ncTestService.services.TestService;
@@ -28,6 +29,9 @@ public class EnrollmentController {
     TestService testService;
 
     @Autowired
+    CityService cityService;
+
+    @Autowired
     ECTFConverter ectfConverter;
 
     @GetMapping("/api/enrollment/active")
@@ -37,7 +41,7 @@ public class EnrollmentController {
 
         List<ECTFDTO> DTOList = new ArrayList<>();
 
-        for(EnrollmentCityTestFormat ectf : list) {
+        for (EnrollmentCityTestFormat ectf : list) {
             DTOList.add(ectfConverter.convertToDTO(ectf));
         }
 
@@ -56,6 +60,11 @@ public class EnrollmentController {
 
         return ResponseEntity.ok(HttpStatus.OK);
 
+    }
+
+    @GetMapping("/api/cities")
+    ResponseEntity<?> getCities() {
+        return ResponseEntity.ok(cityService.findAllNames());
     }
 
 }

@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
 import java.util.Optional;
 
 @Component
@@ -56,7 +55,6 @@ public class UserInfoConv {
     }
 
     public UserInfoDTO userInfoToDto(UserInfo userInfo) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         UserInfoDTO userInfoDto = new UserInfoDTO();
         userInfoDto.setStudentStatus(userInfo.getStudentStatus());
         userInfoDto.setFirstName(userInfo.getFirstName());
@@ -68,8 +66,8 @@ public class UserInfoConv {
         userInfoDto.setGrade(userInfo.getGrade());
         userInfoDto.setPhone(userInfo.getPhone());
         if (userInfo.getEnrollment() != null) {
-            userInfoDto.setTestStart(dateFormat.format(userInfo.getEnrollment().getEnrollment().getTestStart()));
-            userInfoDto.setTestEnd(dateFormat.format(userInfo.getEnrollment().getEnrollment().getTestEnd()));
+            userInfoDto.setTestStart(userInfo.getEnrollment().getEnrollment().getTestStart());
+            userInfoDto.setTestEnd(userInfo.getEnrollment().getEnrollment().getTestEnd());
             userInfoDto.setEnrollmentId(userInfo.getEnrollment().getId());
         }
         return userInfoDto;
