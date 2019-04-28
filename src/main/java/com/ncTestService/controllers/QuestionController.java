@@ -35,7 +35,13 @@ public class QuestionController {
 
     @GetMapping("/api/question/{specialityName}")
     public ResponseEntity getQuestions(@PathVariable String specialityName) {
-        List<Question> questions = questionService.getQuestions(specialityName);
+        Speciality speciality = specialityService.getSpeciality(specialityName);
+        List<Question> questions;
+        if (speciality != null) {
+            questions = questionService.getQuestions(speciality);
+        }
+        else questions = new ArrayList<>();
+
         List<QuestionDTO> dtoList = new ArrayList<>();
 
         for(Question question : questions) {
