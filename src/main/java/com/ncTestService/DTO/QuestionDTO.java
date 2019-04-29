@@ -17,10 +17,6 @@ public class QuestionDTO {
 
     List<String> answers;
     
-    String speciality;
-    
-    String correctAnswer;
-
     String correctAnswer;
 
 }
