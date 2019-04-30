@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -37,15 +38,41 @@ public class TestController {
     AnswerConv answerConv;
 
 
+    @GetMapping("api/test")
+    public ResponseEntity getTestFormat() {
+
+        User user = userService.getPrincipialUser();
+
+        Optional<UserInfo> optUserInfo = userService.getUserInfoByUserId(user.getId());
+        UserInfo userInfo = optUserInfo.orElseGet(UserInfo::new);
+        EnrollmentCityTestFormat ectf = userInfo.getEnrollment();
+
+        TestFormat testFormat;
+
+        if(ectf != null) {
+            testFormat = ectf.getTestFormat();
+        } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.I_AM_A_TEAPOT);
+
+        return new ResponseEntity(testFormat, HttpStatus.OK);
+
+    }
+
     @GetMapping("/api/test/questions")
     public ResponseEntity getQuestions() {
 
         User user = userService.getPrincipialUser();
 
-        EnrollmentCityTestFormat ectf = userService.getUserInfoByUserId(user.getId()).get().getEnrollment();
+        Optional<UserInfo> optUserInfo = userService.getUserInfoByUserId(user.getId());
+        UserInfo userInfo = optUserInfo.orElseGet(UserInfo::new);
+        EnrollmentCityTestFormat ectf = userInfo.getEnrollment();
 
-        TestFormat testFormat = ectf.getTestFormat();
-        Speciality speciality = ectf.getEnrollment().getSpeciality();
+        TestFormat testFormat;
+        Speciality speciality;
+
+        if(ectf != null) {
+            testFormat = ectf.getTestFormat();
+            speciality = ectf.getEnrollment().getSpeciality();
+        } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.I_AM_A_TEAPOT);
 
         List<Question> questions = testService.generateTest(testFormat.getNumberOfQuestions(), speciality);
 

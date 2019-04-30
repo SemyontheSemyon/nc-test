@@ -66,7 +66,7 @@ public class UserInfoConv {
     }
 
     public UserInfoDTO userInfoToDto(UserInfo userInfo) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         UserInfoDTO userInfoDto = new UserInfoDTO();
 
         userInfoDto.setStudentStatus(userInfo.getStudentStatus());
@@ -80,8 +80,8 @@ public class UserInfoConv {
         userInfoDto.setPhone(userInfo.getPhone());
 
         if (userInfo.getEnrollment()!= null) {
-            userInfoDto.setTestStart(dateFormat.format(userInfo.getEnrollment().getEnrollment().getTestStart()));
-            userInfoDto.setTestEnd(dateFormat.format(userInfo.getEnrollment().getEnrollment().getTestEnd()));
+            userInfoDto.setTestStart(userInfo.getEnrollment().getEnrollment().getTestStart().replaceAll("-", "/"));
+            userInfoDto.setTestEnd(userInfo.getEnrollment().getEnrollment().getTestEnd().replaceAll("-", "/"));
             userInfoDto.setEnrollmentId(userInfo.getEnrollment().getId());
         }
 
