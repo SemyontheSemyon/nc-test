@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe85be88-8006-46fe-87f9-ed32bceb1fdb" name="Default Changelist" comment="Cleanup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/DTO/QuestionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/DTO/QuestionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/EnrollmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/EnrollmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncTestService/converters/Impl/SpecialityConv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/DTO/AnswerDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/DTO/AnswerDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/DTO/QuestionDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/DTO/QuestionDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/EnrollmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/EnrollmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/SpecialityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/SpecialityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/controllers/TestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/AnswerConv.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/AnswerConv.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/QuestionConv.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/QuestionConv.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/UserInfoConv.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/converters/Impl/UserInfoConv.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/dbInit/entitiesInit/Impl/EnrollmentInitImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/dbInit/entitiesInit/Impl/EnrollmentInitImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/dbInit/entitiesInit/Impl/SpecialityInitImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/dbInit/entitiesInit/Impl/SpecialityInitImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/models/Speciality.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/models/Speciality.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/AnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/AnswerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/CityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/CityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/QuestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/AnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/AnswerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/CityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/CityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/QuestionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/QuestionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/TestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncTestService/services/impl/TestServiceImpl.class" afterDir="false" />
-    </list>
+    <list default="true" id="fe85be88-8006-46fe-87f9-ed32bceb1fdb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/EnrollmentController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="850">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -138,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/dbInit/entitiesInit/Impl/UserInitImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+            <state relative-caret-position="306">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -405,7 +381,7 @@
       <updated>1556292122680</updated>
       <workItem from="1556292124758" duration="1640000" />
       <workItem from="1556302784668" duration="682000" />
-      <workItem from="1556658674085" duration="1042000" />
+      <workItem from="1556658674085" duration="1104000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit from idea 1">
       <created>1556293597054</created>
@@ -421,15 +397,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556300509022</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merged together">
+      <created>1556660305641</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556660305641</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9340000" />
+    <option name="totallyTimeSpent" value="9402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15458423" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -441,7 +423,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3261105" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3261105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -451,7 +433,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32827735" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -527,7 +509,8 @@
     <MESSAGE value="Test commit from idea 1" />
     <MESSAGE value="Test commit from idea 2" />
     <MESSAGE value="Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
+    <MESSAGE value="Merged together" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged together" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -863,7 +846,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/controllers/EnrollmentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
@@ -907,8 +890,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncTestService/dbInit/entitiesInit/Impl/UserInitImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
