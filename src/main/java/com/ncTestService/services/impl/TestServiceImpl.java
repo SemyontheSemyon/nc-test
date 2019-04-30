@@ -75,7 +75,7 @@ public class TestServiceImpl implements TestService {
 
         for (int i = 0; i < questionsNum; i++) {
 
-            Question q = questionList.get((int) (Math.random() * questionList.size()) + 1);
+            Question q = questionList.get((int) (Math.random() * questionList.size()));
             testList.add(q);
             questionList.remove(q);
         }

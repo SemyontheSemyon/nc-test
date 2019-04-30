@@ -32,6 +32,7 @@ public class QuestionConv {
         dto.setText(question.getText());
         dto.setAnswers(new ArrayList<>());
 
+        if(!question.getQuestionType().getName().equals("free"))
         for(Answer answer : answers) {
             dto.getAnswers().add(answer.getText());
         }
