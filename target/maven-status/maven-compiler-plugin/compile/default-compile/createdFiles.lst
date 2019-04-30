@@ -1,0 +1,5 @@
+com\ncTestService\controllers\EnrollmentController.class
+com\ncTestService\dbInit\DBInit.class
+com\ncTestService\services\impl\ECTFServiceImpl.class
+com\ncTestService\dbInit\entitiesInit\Impl\ECTFInitImpl.class
+com\ncTestService\dbInit\entitiesInit\Impl\AnswerInitImpl.class
