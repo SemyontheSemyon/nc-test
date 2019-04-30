@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class AnswerDTO {
 
-    Long questionId;
+    Long id;
 
     String studentAnswer;
 

@@ -22,7 +22,7 @@ public class AnswerConv {
 
         TestUser testUser = new TestUser();
 
-        Question question = questionService.getQuestion(dto.getQuestionId());
+        Question question = questionService.getQuestion(dto.getId());
 
         testUser.setQuestion(question);
         testUser.setAnswer(answerService.getCorrectAnswer(question));
