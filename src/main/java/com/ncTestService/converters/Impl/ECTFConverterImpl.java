@@ -3,6 +3,8 @@ package com.ncTestService.converters.Impl;
 import com.ncTestService.DTO.ECTFDTO;
 import com.ncTestService.converters.ECTFConverter;
 import com.ncTestService.models.*;
+import com.ncTestService.repositories.EnrollmentCityTestFormatRepository;
+import com.ncTestService.repositories.EnrollmentRepository;
 import com.ncTestService.services.CityService;
 import com.ncTestService.services.SpecialityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,12 @@ public class ECTFConverterImpl implements ECTFConverter {
 
     @Autowired
     SpecialityService specialityService;
+
+    @Autowired
+    EnrollmentCityTestFormatRepository ectfRepository;
+
+    @Autowired
+    EnrollmentRepository enrollmentRepository;
 
     @Override
     public ECTFDTO convertToDTO(EnrollmentCityTestFormat ectf) {
@@ -44,22 +52,35 @@ public class ECTFConverterImpl implements ECTFConverter {
     @Override
     public EnrollmentCityTestFormat convertFromDTO(ECTFDTO ectfdto) {
 
-        Speciality speciality = specialityService.getSpeciality(ectfdto.getSpeciality());
-        Enrollment enrollment = new Enrollment(
-                speciality,
-                ectfdto.getAppStart(),
-                ectfdto.getAppEnd(),
-                ectfdto.getTestStart(),
-                ectfdto.getTestEnd(),
-                ectfdto.getCreatedAt());
-        City city = cityService.findByName(ectfdto.getCity());
-        TestFormat testFormat = new TestFormat(
-                ectfdto.getTime(),
-                ectfdto.getNumberOfQuestions(),
-                ectfdto.getThreshold());
+        EnrollmentCityTestFormat ectf;
+        Enrollment enrollment;
+        TestFormat testFormat;
 
-        EnrollmentCityTestFormat ectf = new EnrollmentCityTestFormat(enrollment, city, testFormat);
+        if (ectfdto.getId() != null) {
+            ectf = ectfRepository.findById(ectfdto.getId()).get();
+            enrollment = ectf.getEnrollment();
+            testFormat = ectf.getTestFormat();
+        } else {
+            ectf = new EnrollmentCityTestFormat();
+            enrollment = new Enrollment();
+            City city = cityService.findByName(ectfdto.getCity());
+            testFormat = new TestFormat();
+            Speciality speciality = specialityService.getSpeciality(ectfdto.getSpeciality());
 
+            ectf.setCity(city);
+            ectf.setEnrollment(enrollment);
+            ectf.setTestFormat(testFormat);
+            enrollment.setSpeciality(speciality);
+        }
+
+        enrollment.setAppStart(ectfdto.getAppStart());
+        enrollment.setAppEnd(ectfdto.getAppEnd());
+        enrollment.setTestStart(ectfdto.getTestStart());
+        enrollment.setTestEnd(ectfdto.getTestEnd());
+
+        testFormat.setTime(ectfdto.getTime());
+        testFormat.setNumberOfQuestions(ectfdto.getNumberOfQuestions());
+        testFormat.setThreshold(ectfdto.getThreshold());
 
         return ectf;
     }

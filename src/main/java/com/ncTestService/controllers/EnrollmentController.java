@@ -48,8 +48,8 @@ public class EnrollmentController {
         return DTOList;
     }
 
-    @PostMapping("/api/enrollment/new")
-    ResponseEntity addEnrollment(@RequestBody ECTFDTO dto) {
+    @PostMapping("/api/enrollment")
+    ResponseEntity postEnrollment(@RequestBody ECTFDTO dto) {
 
         EnrollmentCityTestFormat ectf = ectfConverter.convertFromDTO(dto);
 
@@ -67,4 +67,27 @@ public class EnrollmentController {
         return ResponseEntity.ok(cityService.findAllNames());
     }
 
+    @GetMapping("/api/enrollment/{cityName}")
+    ResponseEntity getEnrollments(@PathVariable String cityName) {
+
+
+        List<EnrollmentCityTestFormat> ectfs = ectfService.findByCity(cityService.findByName(cityName));
+        List<ECTFDTO> dtos = new ArrayList<>();
+
+        for (EnrollmentCityTestFormat ectf : ectfs) {
+            dtos.add(ectfConverter.convertToDTO(ectf));
+        }
+
+        return new ResponseEntity(dtos, HttpStatus.OK);
+
+    }
+
+    @DeleteMapping("api/enrollment/{enrollmentId}")
+    ResponseEntity deleteEnrollment(@PathVariable Long enrollmentId) {
+
+        this.ectfService.deleteECTF(enrollmentId);
+
+        return new ResponseEntity(HttpStatus.OK);
+
+    }
 }
