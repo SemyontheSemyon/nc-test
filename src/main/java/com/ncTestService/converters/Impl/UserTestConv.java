@@ -19,9 +19,7 @@ public class UserTestConv {
         userTestDTO.setEmail(test.getUser().getEmail());
         userTestDTO.setPassed(test.isPassed());
         userTestDTO.setTakenAt(test.getTakenAt());
-        testUserRepository.findByTest(test).forEach(testUser -> {
-            userTestDTO.getUserAnswers().add(testUser);
-        });
+        userTestDTO.setUserAnswers( testUserRepository.findByTest(test));
 
         return userTestDTO;
     }

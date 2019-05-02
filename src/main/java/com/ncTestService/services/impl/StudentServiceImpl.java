@@ -31,11 +31,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<UserTestDTO> getAllUserTests() {
         List<UserTestDTO> userTestDTOS = new ArrayList<>();
-        userRepository.findAll().forEach(user -> {
-            userTestDTOS.add(getUserTest(user.getEmail()));
+        testRepository.findAll().forEach(test -> {
+            userTestDTOS.add(userTestConv.getUserTestDTO(test));
         });
-        if(userTestDTOS==null)
-            return null;
         return userTestDTOS;
     }
 
