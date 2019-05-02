@@ -1,7 +1,6 @@
 package com.ncTestService.dbInit.entitiesInit.Impl;
 
 import com.ncTestService.dbInit.entitiesInit.UserInit;
-import com.ncTestService.models.Role;
 import com.ncTestService.models.User;
 import com.ncTestService.repositories.RoleRepository;
 import com.ncTestService.repositories.UserRepository;
@@ -46,8 +45,6 @@ public class UserInitImpl implements UserInit {
         list.add(userPAP);
 
         userRepository.saveAll(list);
-
-
 
     }
 }
