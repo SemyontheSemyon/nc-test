@@ -48,10 +48,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserInfo(UserInfo userInfo) {
+        userInfoRepository.save(userInfo);
         if (userInfo.getEnrollment() != null) {
             emailService.scheduleEmail(userInfo);
         }
-        userInfoRepository.save(userInfo);
     }
 
 

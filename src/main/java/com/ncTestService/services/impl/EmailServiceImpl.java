@@ -31,16 +31,20 @@ public class EmailServiceImpl implements EmailService {
         try {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date date = dateFormat.parse(userInfo.getEnrollment().getEnrollment().getTestStart());
-            logger.info("Parsed date is: " + date);
-
-            JobDetail jobDetailStart = buildJobDetail(userInfo.getUser().getEmail(), "New test is available");
-            Trigger triggerStart = buildJobTrigger(jobDetailStart, new Date());
-            scheduler.scheduleJob(jobDetailStart, triggerStart);
-            JobDetail jobDetailEnd = buildJobDetail(userInfo.getUser().getEmail(), "You have" + testRepository.findByUser(userInfo.getUser()).isPassed() + "the test");
-            Trigger triggerEnd = buildJobTrigger(jobDetailEnd, new Date(119, 05, 13, 00, 10, 00));
-            scheduler.scheduleJob(jobDetailEnd, triggerEnd);
-            logger.info("job scheduled");
-
+            if (testRepository.findByUser(userInfo.getUser()) == null && !userInfo.getStudentStatus().equals("TestWritten")) {
+                logger.info("test available");
+                JobDetail jobDetailStart = buildJobDetail(userInfo.getUser().getEmail(), "New test is available");
+                Trigger triggerStart = buildJobTrigger(jobDetailStart, new Date());
+                scheduler.scheduleJob(jobDetailStart, triggerStart);
+            }
+            if (userInfo.getStudentStatus().equals("TestWritten")) {
+                logger.info("test passed");
+                JobDetail jobDetailEnd = buildJobDetail(userInfo.getUser().getEmail(), "You have " +
+                        (testRepository.findByUser(userInfo.getUser()).isPassed() ? "passed" : "failed")
+                        + " the test");
+                Trigger triggerEnd = buildJobTrigger(jobDetailEnd, new Date());
+                scheduler.scheduleJob(jobDetailEnd, triggerEnd);
+            }
         } catch (SchedulerException ex) {
             logger.error("Error scheduling email", ex);
         } catch (ParseException ex) {
