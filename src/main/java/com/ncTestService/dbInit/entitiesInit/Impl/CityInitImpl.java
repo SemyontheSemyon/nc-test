@@ -22,7 +22,7 @@ public class CityInitImpl implements CityInit {
 
         String[] cities = {"SPB", "MSK", "EKB", "NSK", "KZN"};
 
-        for(String city : cities) {
+        for (String city : cities) {
             list.add(new City(city));
         }
 

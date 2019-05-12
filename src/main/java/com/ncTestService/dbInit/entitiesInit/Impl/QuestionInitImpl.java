@@ -25,11 +25,11 @@ public class QuestionInitImpl {
 
     public void initQuestions() {
 
-        List<Speciality> specialities = (List)specialityRepository.findAll();
-        List<QuestionType> questionTypes = (List)questionTypeRepository.findAll();
-        for(int i = 1; i < 21; i++) {
-            for(Speciality speciality : specialities) {
-                for(QuestionType questionType : questionTypes) {
+        List<Speciality> specialities = (List) specialityRepository.findAll();
+        List<QuestionType> questionTypes = (List) questionTypeRepository.findAll();
+        for (int i = 1; i < 21; i++) {
+            for (Speciality speciality : specialities) {
+                for (QuestionType questionType : questionTypes) {
 
                     Question question = new Question();
                     question.setText(questionType.getName() + speciality.getName() + i);
@@ -40,7 +40,6 @@ public class QuestionInitImpl {
                 }
             }
         }
-
 
 
     }

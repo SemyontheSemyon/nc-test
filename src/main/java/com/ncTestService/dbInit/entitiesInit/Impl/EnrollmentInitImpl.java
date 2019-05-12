@@ -25,27 +25,27 @@ public class EnrollmentInitImpl implements EnrollmentInit {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy");
 
-        String jan = "2019-03-10";
+        String jan = "2019-05-10";
         String feb = "2019-06-10";
-        String march = "2019-03-10";
+        String march = "2019-05-10";
         String april = "2019-06-10";
-        String may = "2019-03-10";
+        String may = "2019-05-10";
         String june = "2019-06-10";
 
         String[] months = {jan, feb, march, april, may, june};
 
-        List<Speciality> specialities = (List)specialityRepository.findAll();
+        List<Speciality> specialities = (List) specialityRepository.findAll();
 
         System.out.println("ENROLLMENT");
 
-        for(int i = 0; i<specialities.size(); i++) {
+        for (int i = 0; i < specialities.size(); i++) {
 
             Enrollment enrollment = new Enrollment();
-            
+
             enrollment.setAppStart(months[i]);
-            enrollment.setAppEnd(months[i+1]);
-            enrollment.setTestStart(months[i+2]);
-            enrollment.setTestEnd(months[i+3]);
+            enrollment.setAppEnd(months[i + 1]);
+            enrollment.setTestStart(months[i + 2]);
+            enrollment.setTestEnd(months[i + 3]);
             enrollment.setSpeciality(specialities.get(i));
             enrollmentRepository.save(enrollment);
 

@@ -32,13 +32,13 @@ public class ECTFInitImpl implements ECTFInit {
 
     @Override
     public void initECTF() {
-        List<City> cities = (List)cityRepository.findAll();
-        List<Enrollment> enrollments = (List)enrollmentRepository.findAll();
-        List<TestFormat> testFormats = (List)testFormatRepository.findAll();
+        List<City> cities = (List) cityRepository.findAll();
+        List<Enrollment> enrollments = (List) enrollmentRepository.findAll();
+        List<TestFormat> testFormats = (List) testFormatRepository.findAll();
 
-        for(City city : cities) {
+        for (City city : cities) {
 
-            for(Enrollment enrollment : enrollments) {
+            for (Enrollment enrollment : enrollments) {
                 EnrollmentCityTestFormat ectf = new EnrollmentCityTestFormat(enrollment, city, testFormats.get(0));
                 ectf.setActive(true);
                 repository.save(ectf);

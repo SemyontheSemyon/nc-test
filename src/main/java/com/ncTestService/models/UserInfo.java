@@ -1,7 +1,8 @@
 package com.ncTestService.models;
 
 
-import lombok.*;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -17,12 +18,12 @@ public class UserInfo {
     @GeneratedValue
     private Long id;
 
-    @OneToOne(fetch =  FetchType.EAGER, optional = false)
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @Column(nullable = false, columnDefinition = "text", unique =  false)
+    @Column(nullable = false, columnDefinition = "text", unique = false)
     private String studentStatus;
 
     @Column(nullable = false, columnDefinition = "text", name = "first_name")

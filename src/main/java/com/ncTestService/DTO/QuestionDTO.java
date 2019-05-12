@@ -16,6 +16,6 @@ public class QuestionDTO {
     String text;
 
     List<String> answers;
-    
+
     String correctAnswer;
 }

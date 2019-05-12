@@ -7,9 +7,8 @@ import com.ncTestService.services.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class QuestionServiceImpl implements QuestionService {
 
@@ -36,7 +35,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Question> getQuestions(Speciality speciality) {
-        return (List)questionRepository.findAllBySpeciality(speciality);
+        return (List) questionRepository.findAllBySpeciality(speciality);
     }
 
     @Override

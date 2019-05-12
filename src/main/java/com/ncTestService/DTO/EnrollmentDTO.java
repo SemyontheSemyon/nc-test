@@ -1,7 +1,5 @@
 package com.ncTestService.DTO;
 
-import java.util.Date;
-
 public class EnrollmentDTO {
 
     private String speciality;
@@ -9,7 +7,6 @@ public class EnrollmentDTO {
     private String appEnd;
     private String testStart;
     private String testEnd;
-
 
 
 }

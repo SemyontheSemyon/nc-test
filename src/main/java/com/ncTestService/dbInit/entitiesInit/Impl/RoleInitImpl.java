@@ -22,7 +22,7 @@ public class RoleInitImpl implements RoleInit {
 
         String[] roles = {"ROLE_USER", "ROLE_MANAGER", "ROLE_ADMIN"};
 
-        for(String role : roles) {
+        for (String role : roles) {
             list.add(new Role(role));
         }
 

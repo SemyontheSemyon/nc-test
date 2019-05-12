@@ -16,16 +16,14 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository userRepository;
-    private UserInfoRepository userInfoRepository;
-    private RoleRepository roleRepository;
-
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, UserInfoRepository userInfoRepository, RoleRepository roleRepository) {
-        this.userRepository = userRepository;
-        this.userInfoRepository = userInfoRepository;
-        this.roleRepository = roleRepository;
-    }
+    private UserRepository userRepository;
+    @Autowired
+    private UserInfoRepository userInfoRepository;
+    @Autowired
+    private RoleRepository roleRepository;
+    @Autowired
+    private EmailServiceImpl emailService;
 
     @Override
     public User getUser(String username) {
@@ -50,6 +48,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserInfo(UserInfo userInfo) {
+        if (userInfo.getEnrollment() != null) {
+            emailService.scheduleEmail(userInfo);
+        }
         userInfoRepository.save(userInfo);
     }
 

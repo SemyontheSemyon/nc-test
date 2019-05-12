@@ -19,14 +19,14 @@ public class EnrollmentChecker {
     @Autowired
     ECTFService ectfService;
 
-    @Scheduled(fixedRate = (1000*60*60*24))
+    @Scheduled(fixedRate = (1000 * 60 * 60 * 24))
     public void checkEnrollments() {
 
         List<EnrollmentCityTestFormat> list = ectfService.getActiveECTF();
 
         Date now = new Date();
 
-        for(EnrollmentCityTestFormat ectf : list) {
+        for (EnrollmentCityTestFormat ectf : list) {
 
             //ectf.setActive(ectf.getEnrollment().getAppEnd().after(now));
 

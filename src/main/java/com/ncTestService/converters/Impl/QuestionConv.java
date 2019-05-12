@@ -6,7 +6,6 @@ import com.ncTestService.models.Question;
 import com.ncTestService.repositories.AnswerRepository;
 import com.ncTestService.repositories.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,10 +31,10 @@ public class QuestionConv {
         dto.setText(question.getText());
         dto.setAnswers(new ArrayList<>());
 
-        if(!question.getQuestionType().getName().equals("free"))
-        for(Answer answer : answers) {
-            dto.getAnswers().add(answer.getText());
-        }
+        if (!question.getQuestionType().getName().equals("free"))
+            for (Answer answer : answers) {
+                dto.getAnswers().add(answer.getText());
+            }
 
         return dto;
 

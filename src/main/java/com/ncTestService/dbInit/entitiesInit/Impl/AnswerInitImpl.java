@@ -24,17 +24,17 @@ public class AnswerInitImpl {
 
     public void initAnswers() {
 
-        List<Question> questions = (List)questionRepository.findAll();
+        List<Question> questions = (List) questionRepository.findAll();
 
-        for(Question question : questions) {
+        for (Question question : questions) {
 
-            if(question.getQuestionType().equals(questionTypeRepository.findByName("free"))) {
+            if (question.getQuestionType().equals(questionTypeRepository.findByName("free"))) {
                 Answer answer = new Answer("A", true);
                 answer.setQuestion(question);
                 answerRepository.save(answer);
             }
 
-            if(question.getQuestionType().equals(questionTypeRepository.findByName("radio"))) {
+            if (question.getQuestionType().equals(questionTypeRepository.findByName("radio"))) {
                 Answer answer = new Answer("A", true);
                 Answer answer1 = new Answer("B", false);
                 Answer answer2 = new Answer("C", false);

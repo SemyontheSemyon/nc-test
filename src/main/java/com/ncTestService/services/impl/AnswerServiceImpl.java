@@ -19,7 +19,7 @@ public class AnswerServiceImpl implements AnswerService {
     public AnswerServiceImpl(AnswerRepository answerRepository) {
         this.answerRepository = answerRepository;
     }
-  
+
     @Override
     public Answer saveAnswer(Answer answer) {
         return answerRepository.save(answer);
@@ -44,7 +44,7 @@ public class AnswerServiceImpl implements AnswerService {
     public List<List<Answer>> getAnswers(List<Question> questionList) {
         List<List<Answer>> answersList = new ArrayList<>();
 
-        for(Question q : questionList) {
+        for (Question q : questionList) {
 
             List<Answer> list = getAnswer(q);
 

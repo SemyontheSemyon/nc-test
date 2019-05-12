@@ -5,7 +5,6 @@ import com.ncTestService.converters.Impl.QuestionEditConv;
 import com.ncTestService.models.Answer;
 import com.ncTestService.models.Question;
 import com.ncTestService.models.Speciality;
-import com.ncTestService.repositories.AnswerRepository;
 import com.ncTestService.services.AnswerService;
 import com.ncTestService.services.QuestionService;
 import com.ncTestService.services.SpecialityService;
@@ -39,12 +38,11 @@ public class QuestionController {
         List<Question> questions;
         if (speciality != null) {
             questions = questionService.getQuestions(speciality);
-        }
-        else questions = new ArrayList<>();
+        } else questions = new ArrayList<>();
 
         List<QuestionDTO> dtoList = new ArrayList<>();
 
-        for(Question question : questions) {
+        for (Question question : questions) {
             dtoList.add(conv.convertToDTO(question));
         }
 
@@ -57,16 +55,16 @@ public class QuestionController {
         question = questionService.saveQuestion(question);
         List<Answer> answerList;
 
-        if(dto.getId() != null) {
-             answerList = answerService.getAnswer(question);
-             answerService.deleteAll(answerList);
+        if (dto.getId() != null) {
+            answerList = answerService.getAnswer(question);
+            answerService.deleteAll(answerList);
         }
 
-        for(String answerText : dto.getAnswers()) {
+        for (String answerText : dto.getAnswers()) {
             Answer answer = new Answer();
             answer.setQuestion(question);
             answer.setText(answerText);
-            if(answerText.equals(dto.getCorrectAnswer())) {
+            if (answerText.equals(dto.getCorrectAnswer())) {
                 answer.setCorrect(true);
             }
             answerService.saveAnswer(answer);
@@ -81,7 +79,7 @@ public class QuestionController {
     public ResponseEntity deleteQuestion(@PathVariable Long questionId) {
 
         Question question = questionService.getQuestion(questionId);
-        if(question != null) questionService.deleteQuestion(question);
+        if (question != null) questionService.deleteQuestion(question);
 
         return new ResponseEntity(HttpStatus.OK);
     }

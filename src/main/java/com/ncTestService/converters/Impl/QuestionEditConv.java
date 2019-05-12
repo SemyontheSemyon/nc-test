@@ -37,7 +37,7 @@ public class QuestionEditConv {
         dto.setId(question.getId());
         dto.setText(question.getText());
         dto.setType(question.getQuestionType().getName());
-        for(Answer a : answerList) {
+        for (Answer a : answerList) {
             answers.add(a.getText());
         }
         dto.setAnswers(answers);
@@ -49,12 +49,11 @@ public class QuestionEditConv {
     public Question convertFromDTO(QuestionDTO dto) {
         Question question;
 
-        if(dto.getId() == null) {
+        if (dto.getId() == null) {
             question = new Question();
             question.setSpeciality(specialityRepository.findByName(dto.getSpeciality()));
             question.setQuestionType(questionTypeRepository.findByName(dto.getType()));
-        }
-        else {
+        } else {
             question = questionRepository.findById(dto.getId()).get();
         }
 

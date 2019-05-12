@@ -22,6 +22,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserService userService;
 
+    private static Set<GrantedAuthority> getAuthorities(User user) {
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+        for (Role role : user.getRoles()) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
+        return grantedAuthorities;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userService.getUser(username);
@@ -29,13 +37,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException(username);
 
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), getAuthorities(user));
-    }
-
-    private static Set<GrantedAuthority> getAuthorities (User user) {
-        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        for (Role role : user.getRoles()) {
-            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-        }
-        return grantedAuthorities;
     }
 }

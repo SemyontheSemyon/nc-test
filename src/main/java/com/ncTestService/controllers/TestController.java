@@ -49,7 +49,7 @@ public class TestController {
 
         TestFormat testFormat;
 
-        if(ectf != null) {
+        if (ectf != null) {
             testFormat = ectf.getTestFormat();
         } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.I_AM_A_TEAPOT);
 
@@ -69,7 +69,7 @@ public class TestController {
         TestFormat testFormat;
         Speciality speciality;
 
-        if(ectf != null) {
+        if (ectf != null) {
             testFormat = ectf.getTestFormat();
             speciality = ectf.getEnrollment().getSpeciality();
         } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.I_AM_A_TEAPOT);
@@ -78,7 +78,7 @@ public class TestController {
 
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
-        for(Question question : questions) {
+        for (Question question : questions) {
             questionDTOList.add(questionConv.convertToDTO(question));
         }
 
@@ -105,7 +105,7 @@ public class TestController {
 
         List<TestUser> testUsers = new ArrayList<>();
 
-        for(AnswerDTO dto : answers) {
+        for (AnswerDTO dto : answers) {
             TestUser testUser = answerConv.convertFromDTO(dto);
             testUser.setTest(test);
             testService.checkTestUser(testUser);

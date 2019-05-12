@@ -19,7 +19,7 @@ public class UserTestConv {
         userTestDTO.setEmail(test.getUser().getEmail());
         userTestDTO.setPassed(test.isPassed());
         userTestDTO.setTakenAt(test.getTakenAt());
-        userTestDTO.setUserAnswers( testUserRepository.findByTest(test));
+        userTestDTO.setUserAnswers(testUserRepository.findByTest(test));
 
         return userTestDTO;
     }
