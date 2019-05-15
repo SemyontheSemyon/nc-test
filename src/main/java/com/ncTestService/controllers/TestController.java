@@ -98,7 +98,7 @@ public class TestController {
 
         Test test = new Test();
         test.setUser(user);
-        test.setTakenAt(new Date());
+        test.setTakenAt(new Date(114,5,14));
         test.setPassed(false);
 
         testService.addTest(test);

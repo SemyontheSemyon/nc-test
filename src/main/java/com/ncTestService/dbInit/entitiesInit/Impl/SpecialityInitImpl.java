@@ -18,27 +18,95 @@ public class SpecialityInitImpl implements SpecialityInit {
     public void initSpecialities() {
         List<Speciality> list = new ArrayList<>();
 
+        String BAfull = "<b>Business Intern Duties and Responsibilities</b><br>" +
+                "<br>" +
+                "Analyze business goals, objectives, and needs<br>" +
+                "Help plan and design business processes and make recommendations for improvement<br>" +
+                "Perform research and analysis in support of operations<br>" +
+                "Assist in resolving business issues using systems and data<br>" +
+                "Estimate costs and benefits of multiple actions and/or solutions and provide recommendations<br>" +
+                "Help launch new initiatives<br>" +
+                "May perform additional projects upon request<br>" +
+                "<br>" +
+                "<b>Requirements</b><br>" +
+                "<br>" +
+                "Business Administration or related major<br>" +
+                "Minimum 3.0 GPA<br>" +
+                "Experience with Microsoft Office<br>" +
+                "Excellent critical thinking and problem-solving skills<br>" +
+                "Good written and verbal communication skills<br>" +
+                "Detail-oriented with strong organizational skills<br>" +
+                "<br>" +
+                "<b>Benefits</b><br>" +
+                "<br>" +
+                "Practical experience with varied business activities<br>" +
+                "Shadowing, mentoring, and training opportunities with experienced and accomplished business professionals<br>" +
+                "Opportunity to attend business meetings and networking events<br>" +
+                "Flexible schedule for students<br>" +
+                "Compensation available";
+
+        String QAfull = "<b>Essential Job Functions:</b><br>" +
+                "<br>" +
+                "Develop functional manual test plans from requirement and product documentation.<br>" +
+                "Create automated test scripts from existing QA test cases.<br>" +
+                "Run tests based on detailed instructions with responsibility for trying to break the application, anticipating errors that a user could create and making sure that validations are in place to prevent these errors from crashing the program.<br>" +
+                "Develop and execute test plans, test cases and test suites to support both manual and automated testing.<br>" +
+                "Participate on projects as part of the QA Test team.<br>" +
+                "Documents test results and maintains test records<br>" +
+                "Designs and analyzes test cases and writes test procedures for implementing test cases<br>" +
+                "Processes and coordinates testing information and enters data into standard QA documentation<br>" +
+                "Other duties as assigned.<br>" +
+                "<br>" +
+                "<b>Education/Certifications:</b><br>" +
+                "<br>" +
+                "Pursuing a four-year degree or MS degree in Computer Science/Information Technology, Computer/Electrical Engineering or equivalent<br>" +
+                "<br>" +
+                "<b>Experience/Minimum Requirements:</b><br>" +
+                "<br>" +
+                "Must be eligible to work in the U.S. without sponsorship (now or in the future).<br>" +
+                "Must have the demonstrated intellectual ability to grasp basic software testing concepts.<br>" +
+                "Must have significant course work in Computer Science, Information Science, Information Systems or Information Technology.<br>" +
+                "Good oral and written communications skills.<br>" +
+                "Organized, detail-oriented and good interpersonal skills.<br>" +
+                "Ability to work in a fast paced environment<br>" +
+                "<br>" +
+                "<b>Other Skills/Abilities:</b><br>" +
+                "<br>" +
+                "Experience with databases, SQL and Windows desired.<br>" +
+                "Ability to write QA documentation, test cases, test strategies and summarize findings.<br>" +
+                "Knowledge of automated testing tools is a plus";
+
+        String DEVfull = "<b>Responsibilities</b> <br>" +
+                "<br>" +
+                "Contribute in all areas of software development – design, documentation, implementation and test, as well as, troubleshooting and support<br>" +
+                "Work in a cross-functional environment to deliver a complete solution<br>" +
+                "Provide estimates for technical effort<br>" +
+                "Collaboration with stakeholders <br>" +
+                "You will work with senior developers in the implementation of software applications using Agile development methodologies.<br>" +
+                "Must be able and willing to work in a high energy, dynamic and fast paced development environment<br><br>" +
+                "<b>Skills</b> <br>" +
+                "<br>" +
+                "Good verbal and written communication skills<br>" +
+                "Object-Oriented design skills<br>" +
+                "Preferred experience in programming with one or more of the following (Microsoft .NET, C++, C, Java, Python, Go)<br>" +
+                "Debugging and trouble shooting skills<br>" +
+                "Git or other source code management software<br>" +
+                "Windows and Linux Operating Systems<br>" +
+                "Knowledge of web Services (REST, JSON, XML, SOAP), multi-threaded programming, telecommunication networks (Layers 0-2) is an asset<br>" +
+                "Self-motivated and willing to learn new technologies as needed<br>" +
+                "<br>" +
+                "<b>Benefits</b><br>" +
+                "<br>" +
+                "Rewarding experience. Meaningful outcomes.<br>" +
+                "Making a difference in people's lives through design and implementation of leading network technologies. That's what motivates us.<br>" +
+                "A distinct way to work<br>" +
+                "Free thinking, free discussion, and collaboration are the norm. Expect more satisfying outcomes - both personal and professional.";
+
         try {
 
-            list.add(new Speciality("DEV", "Is post each that just leaf no. He connection interested so we an sympathize advantages. To said is it shed want do. ", "Occasional middletons everything so to. Have spot part for his quit may. Enable it is square my an regard. Often merit stuff first oh up hills as he. Servants contempt as although addition dashwood is procured. Interest in yourself an do of numerous feelings cheerful confined. \n" +
-                    "\n" +
-                    "Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old. Sometimes strangers his ourselves her depending you boy. Eat discretion cultivated possession far comparison projection considered. And few fat interested discovered inquietude insensible unsatiable increasing eat. \n" +
-                    "\n" +
-                    "Much did had call new drew that kept. Limits expect wonder law she. Now has you views woman noisy match money rooms. To up remark it eldest length oh passed. Off because yet mistake feeling has men. Consulted disposing to moonlight ye extremity. Engage piqued in on coming. \n" +
-                    "\n" +
-                    "Village did removed enjoyed explain nor ham saw calling talking. Securing as informed declared or margaret. Joy horrible moreover man feelings own shy. Request norland neither mistake for yet. Between the for morning assured country believe. On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem. "));
-            list.add(new Speciality("BA", "As collected deficient objection by it discovery sincerity curiosity. Quiet decay who round three world whole has mrs man.", "Built the china there tried jokes which gay why. Assure in adieus wicket it is. But spoke round point and one joy. Offending her moonlight men sweetness see unwilling. Often of it tears whole oh balls share an. \n" +
-                    "\n" +
-                    "How promotion excellent curiosity yet attempted happiness. Gay prosperous impression had conviction. For every delay death ask style. Me mean able my by in they. Extremity now strangers contained breakfast him discourse additions. Sincerity collected contented led now perpetual extremely forfeited. \n" +
-                    "\n" +
-                    "At distant inhabit amongst by. Appetite welcomed interest the goodness boy not. Estimable education for disposing pronounce her. John size good gay plan sent old roof own. Inquietude saw understood his friendship frequently yet. Nature his marked ham wished. \n" +
-                    "\n" +
-                    "Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far. Why rather assure how esteem end hunted nearer and before. By an truth after heard going early given he. Charmed to it excited females whether at examine. Him abilities suffering may are yet dependent. "));
-            list.add(new Speciality("QA", "One advanced diverted domestic sex repeated bringing you old. Possible procured her trifling laughter thoughts property she met way.", "Subjects to ecstatic children he. Could ye leave up as built match. Dejection agreeable attention set suspected led offending. Admitting an performed supposing by. Garden agreed matter are should formed temper had. Full held gay now roof whom such next was. Ham pretty our people moment put excuse narrow. Spite mirth money six above get going great own. Started now shortly had for assured hearing expense. Led juvenile his laughing speedily put pleasant relation offering. \n" +
-                    "\n" +
-                    "Boy desirous families prepared gay reserved add ecstatic say. Replied joy age visitor nothing cottage. Mrs door paid led loud sure easy read. Hastily at perhaps as neither or ye fertile tedious visitor. Use fine bed none call busy dull when. Quiet ought match my right by table means. Principles up do in me favourable affronting. Twenty mother denied effect we to do on. \n" +
-                    "\n" +
-                    "Affronting imprudence do he he everything. Sex lasted dinner wanted indeed wished out law. Far advanced settling say finished raillery. Offered chiefly farther of my no colonel shyness. Such on help ye some door if in. Laughter proposal laughing any son law consider. Needed except up piqued an. "));
+            list.add(new Speciality("DEV", "A developer  is a person who creates computer software. The term computer programmer can refer to a specialist in one area of computers, or to a generalist who writes code for many kinds of software or programs.", DEVfull));
+            list.add(new Speciality("BA", "A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", BAfull));
+            list.add(new Speciality("QA", "It is a set of methods that try to ensure the quality of all projects in the software process. This includes procedures that administrators may use to review software and activities to verify that the software meets standards.", QAfull));
 
         } catch (Exception e) {
             e.printStackTrace();
