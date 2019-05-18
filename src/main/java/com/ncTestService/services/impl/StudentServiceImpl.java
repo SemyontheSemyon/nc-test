@@ -17,16 +17,16 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
-    TestRepository testRepository;
+    private TestRepository testRepository;
 
     @Autowired
-    TestUserRepository testUserRepository;
+    private TestUserRepository testUserRepository;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    UserTestConv userTestConv;
+    private UserTestConv userTestConv;
 
     @Override
     public List<UserTestDTO> getAllUserTests() {
