@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SpecialityController {
 
     @Autowired
-    SpecialityService specialityService;
+    private SpecialityService specialityService;
 
     @GetMapping("/api/speciality/all")
     public ResponseEntity<?> getSpecialities() {
