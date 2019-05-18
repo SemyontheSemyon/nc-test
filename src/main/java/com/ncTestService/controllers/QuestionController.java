@@ -21,16 +21,16 @@ import java.util.List;
 public class QuestionController {
 
     @Autowired
-    QuestionEditConv conv;
+    private QuestionEditConv conv;
 
     @Autowired
-    QuestionService questionService;
+    private QuestionService questionService;
 
     @Autowired
-    AnswerService answerService;
+    private AnswerService answerService;
 
     @Autowired
-    SpecialityService specialityService;
+    private SpecialityService specialityService;
 
     @GetMapping("/api/question/{specialityName}")
     public ResponseEntity getQuestions(@PathVariable String specialityName) {
