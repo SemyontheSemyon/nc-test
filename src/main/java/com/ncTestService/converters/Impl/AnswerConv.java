@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 public class AnswerConv {
 
     @Autowired
-    QuestionService questionService;
+    private QuestionService questionService;
 
     @Autowired
-    AnswerService answerService;
+    private AnswerService answerService;
 
     public TestUser convertFromDTO(AnswerDTO dto) {
 
