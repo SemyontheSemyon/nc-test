@@ -14,7 +14,7 @@ import java.util.List;
 public class StudentController {
 
     @Autowired
-    StudentServiceImpl studentService;
+    private StudentServiceImpl studentService;
 
     @GetMapping("/api/usertests")
     List<UserTestDTO> getUserTests() {
