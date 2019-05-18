@@ -17,8 +17,8 @@ import java.util.Optional;
 @RestController
 public class UserInfoController {
 
-    UserService userService;
-    UserInfoConv userInfoConv;
+    private UserService userService;
+    private UserInfoConv userInfoConv;
 
     @Autowired
     public UserInfoController(UserService userService, UserInfoConv userInfoConv) {
