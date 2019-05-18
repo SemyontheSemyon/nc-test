@@ -15,10 +15,10 @@ import java.util.List;
 public class QuestionConv {
 
     @Autowired
-    QuestionRepository questionRepository;
+    private QuestionRepository questionRepository;
 
     @Autowired
-    AnswerRepository answerRepository;
+    private AnswerRepository answerRepository;
 
     public QuestionDTO convertToDTO(Question question) {
 
