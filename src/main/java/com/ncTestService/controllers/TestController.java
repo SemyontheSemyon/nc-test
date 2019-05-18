@@ -23,19 +23,19 @@ import java.util.Optional;
 public class TestController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Autowired
-    TestService testService;
+    private TestService testService;
 
     @Autowired
-    QuestionRepository questionRepository;
+    private QuestionRepository questionRepository;
 
     @Autowired
-    QuestionConv questionConv;
+    private QuestionConv questionConv;
 
     @Autowired
-    AnswerConv answerConv;
+    private AnswerConv answerConv;
 
 
     @GetMapping("api/test")
