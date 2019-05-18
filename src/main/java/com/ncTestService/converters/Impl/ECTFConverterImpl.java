@@ -14,16 +14,16 @@ import org.springframework.stereotype.Service;
 public class ECTFConverterImpl implements ECTFConverter {
 
     @Autowired
-    CityService cityService;
+    private CityService cityService;
 
     @Autowired
-    SpecialityService specialityService;
+    private SpecialityService specialityService;
 
     @Autowired
-    EnrollmentCityTestFormatRepository ectfRepository;
+    private EnrollmentCityTestFormatRepository ectfRepository;
 
     @Autowired
-    EnrollmentRepository enrollmentRepository;
+    private EnrollmentRepository enrollmentRepository;
 
     @Override
     public ECTFDTO convertToDTO(EnrollmentCityTestFormat ectf) {
