@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class UserTestConv {
 
     @Autowired
-    TestUserRepository testUserRepository;
+    private TestUserRepository testUserRepository;
 
     public UserTestDTO getUserTestDTO(Test test) {
         UserTestDTO userTestDTO = new UserTestDTO();
