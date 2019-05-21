@@ -14,11 +14,14 @@ import java.util.List;
 @Service
 public class QuestionConv {
 
-    @Autowired
     QuestionRepository questionRepository;
+    AnswerRepository answerRepository;
 
     @Autowired
-    AnswerRepository answerRepository;
+    public QuestionConv(QuestionRepository questionRepository, AnswerRepository answerRepository) {
+        this.questionRepository = questionRepository;
+        this.answerRepository = answerRepository;
+    }
 
     public QuestionDTO convertToDTO(Question question) {
 

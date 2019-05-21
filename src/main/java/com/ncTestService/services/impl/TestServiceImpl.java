@@ -6,6 +6,7 @@ import com.ncTestService.repositories.TestFormatRepository;
 import com.ncTestService.repositories.TestRepository;
 import com.ncTestService.repositories.TestUserRepository;
 import com.ncTestService.services.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class TestServiceImpl implements TestService {
     private TestFormatRepository testFormatRepository;
     private QuestionRepository questionRepository;
 
+    @Autowired
     public TestServiceImpl(TestRepository testRepository, TestUserRepository testUserRepository, TestFormatRepository testFormatRepository, QuestionRepository questionRepository) {
         this.testRepository = testRepository;
         this.testUserRepository = testUserRepository;

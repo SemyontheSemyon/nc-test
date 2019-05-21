@@ -4,7 +4,6 @@ import com.ncTestService.DTO.ECTFDTO;
 import com.ncTestService.converters.ECTFConverter;
 import com.ncTestService.models.*;
 import com.ncTestService.repositories.EnrollmentCityTestFormatRepository;
-import com.ncTestService.repositories.EnrollmentRepository;
 import com.ncTestService.services.CityService;
 import com.ncTestService.services.SpecialityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +12,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class ECTFConverterImpl implements ECTFConverter {
 
-    @Autowired
     CityService cityService;
-
-    @Autowired
     SpecialityService specialityService;
-
-    @Autowired
     EnrollmentCityTestFormatRepository ectfRepository;
 
     @Autowired
-    EnrollmentRepository enrollmentRepository;
+    public ECTFConverterImpl(CityService cityService, SpecialityService specialityService, EnrollmentCityTestFormatRepository ectfRepository) {
+        this.cityService = cityService;
+        this.specialityService = specialityService;
+        this.ectfRepository = ectfRepository;
+    }
 
     @Override
     public ECTFDTO convertToDTO(EnrollmentCityTestFormat ectf) {

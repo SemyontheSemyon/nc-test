@@ -20,17 +20,18 @@ import java.util.List;
 @RestController
 public class QuestionController {
 
-    @Autowired
     QuestionEditConv conv;
-
-    @Autowired
     QuestionService questionService;
-
-    @Autowired
     AnswerService answerService;
+    SpecialityService specialityService;
 
     @Autowired
-    SpecialityService specialityService;
+    public QuestionController(QuestionEditConv conv, QuestionService questionService, AnswerService answerService, SpecialityService specialityService) {
+        this.conv = conv;
+        this.questionService = questionService;
+        this.answerService = answerService;
+        this.specialityService = specialityService;
+    }
 
     @GetMapping("/api/question/{specialityName}")
     public ResponseEntity getQuestions(@PathVariable String specialityName) {

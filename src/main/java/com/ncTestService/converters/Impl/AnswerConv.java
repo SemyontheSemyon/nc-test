@@ -11,11 +11,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class AnswerConv {
 
-    @Autowired
     QuestionService questionService;
+    AnswerService answerService;
 
     @Autowired
-    AnswerService answerService;
+    public AnswerConv(QuestionService questionService, AnswerService answerService) {
+        this.questionService = questionService;
+        this.answerService = answerService;
+    }
 
     public TestUser convertFromDTO(AnswerDTO dto) {
 

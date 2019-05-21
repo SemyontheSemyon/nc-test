@@ -13,8 +13,12 @@ import java.util.List;
 @RestController()
 public class StudentController {
 
-    @Autowired
     StudentServiceImpl studentService;
+
+    @Autowired
+    public StudentController(StudentServiceImpl studentService) {
+        this.studentService = studentService;
+    }
 
     @GetMapping("/api/usertests")
     List<UserTestDTO> getUserTests() {

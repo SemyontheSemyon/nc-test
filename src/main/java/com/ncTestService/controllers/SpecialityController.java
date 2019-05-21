@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 public class SpecialityController {
 
-    @Autowired
     SpecialityService specialityService;
+
+    @Autowired
+    public SpecialityController(SpecialityService specialityService) {
+        this.specialityService = specialityService;
+    }
 
     @GetMapping("/api/speciality/all")
     public ResponseEntity<?> getSpecialities() {

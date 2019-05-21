@@ -19,8 +19,12 @@ import java.util.Set;
 @Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
     private UserService userService;
+
+    @Autowired
+    public UserDetailsServiceImpl(UserService userService) {
+        this.userService = userService;
+    }
 
     private static Set<GrantedAuthority> getAuthorities(User user) {
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();

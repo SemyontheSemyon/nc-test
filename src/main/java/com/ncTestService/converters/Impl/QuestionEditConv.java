@@ -16,17 +16,18 @@ import java.util.List;
 @Service
 public class QuestionEditConv {
 
-    @Autowired
     QuestionRepository questionRepository;
-
-    @Autowired
     AnswerRepository answerRepository;
-
-    @Autowired
     SpecialityRepository specialityRepository;
+    QuestionTypeRepository questionTypeRepository;
 
     @Autowired
-    QuestionTypeRepository questionTypeRepository;
+    public QuestionEditConv(QuestionRepository questionRepository, AnswerRepository answerRepository, SpecialityRepository specialityRepository, QuestionTypeRepository questionTypeRepository) {
+        this.questionRepository = questionRepository;
+        this.answerRepository = answerRepository;
+        this.specialityRepository = specialityRepository;
+        this.questionTypeRepository = questionTypeRepository;
+    }
 
     public QuestionDTO convertToDTO(Question question) {
         QuestionDTO dto = new QuestionDTO();

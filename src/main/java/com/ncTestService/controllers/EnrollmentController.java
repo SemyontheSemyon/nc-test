@@ -19,20 +19,20 @@ import java.util.List;
 @RestController
 public class EnrollmentController {
 
-    @Autowired
     ECTFService ectfService;
-
-    @Autowired
     EnrollmentService enrollmentService;
-
-    @Autowired
     TestService testService;
-
-    @Autowired
     CityService cityService;
+    ECTFConverter ectfConverter;
 
     @Autowired
-    ECTFConverter ectfConverter;
+    public EnrollmentController(ECTFService ectfService, EnrollmentService enrollmentService, TestService testService, CityService cityService, ECTFConverter ectfConverter) {
+        this.ectfService = ectfService;
+        this.enrollmentService = enrollmentService;
+        this.testService = testService;
+        this.cityService = cityService;
+        this.ectfConverter = ectfConverter;
+    }
 
     @GetMapping("/api/enrollment/active")
     List<ECTFDTO> getActive() {

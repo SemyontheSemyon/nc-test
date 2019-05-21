@@ -21,23 +21,30 @@ public class EmailServiceImpl implements EmailService {
 
     private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 
-    @Autowired
     private Scheduler scheduler;
-    @Autowired
     private TestRepository testRepository;
+
+    @Autowired
+    public EmailServiceImpl(Scheduler scheduler, TestRepository testRepository) {
+        this.scheduler = scheduler;
+        this.testRepository = testRepository;
+    }
 
     @Override
     public void scheduleEmail(UserInfo userInfo) {
         try {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = dateFormat.parse(userInfo.getEnrollment().getEnrollment().getTestStart());
-            if (testRepository.findByUser(userInfo.getUser()) == null && !userInfo.getStudentStatus().equals("TestWritten")) {
+            Date testStart = dateFormat.parse(userInfo.getEnrollment().getEnrollment().getTestStart());
+            Date testEnd = dateFormat.parse(userInfo.getEnrollment().getEnrollment().getTestEnd());
+
+            if (testStart.before(new Date())) {
                 logger.info("test available");
                 JobDetail jobDetailStart = buildJobDetail(userInfo.getUser().getEmail(), "New test is available");
                 Trigger triggerStart = buildJobTrigger(jobDetailStart, new Date());
                 scheduler.scheduleJob(jobDetailStart, triggerStart);
             }
-            if (userInfo.getStudentStatus().equals("TestWritten")) {
+
+            if (userInfo.getStudentStatus().equals("TestWritten") && testEnd.after(new Date())) {
                 logger.info("test passed");
                 JobDetail jobDetailEnd = buildJobDetail(userInfo.getUser().getEmail(), "You have " +
                         (testRepository.findByUser(userInfo.getUser()).isPassed() ? "passed" : "failed")

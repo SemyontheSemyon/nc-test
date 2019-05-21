@@ -21,11 +21,14 @@ public class EmailJob extends QuartzJobBean {
 
     private static final Logger logger = LoggerFactory.getLogger(EmailJob.class);
 
-    @Autowired
     private JavaMailSender mailSender;
+    private MailProperties mailProperties;
 
     @Autowired
-    private MailProperties mailProperties;
+    public EmailJob(JavaMailSender mailSender, MailProperties mailProperties) {
+        this.mailSender = mailSender;
+        this.mailProperties = mailProperties;
+    }
 
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {

@@ -22,21 +22,18 @@ import java.util.Optional;
 @RestController
 public class TestController {
 
-    @Autowired
     UserService userService;
-
-    @Autowired
     TestService testService;
-
-    @Autowired
-    QuestionRepository questionRepository;
-
-    @Autowired
     QuestionConv questionConv;
-
-    @Autowired
     AnswerConv answerConv;
 
+    @Autowired
+    public TestController(UserService userService, TestService testService, QuestionConv questionConv, AnswerConv answerConv) {
+        this.userService = userService;
+        this.testService = testService;
+        this.questionConv = questionConv;
+        this.answerConv = answerConv;
+    }
 
     @GetMapping("api/test")
     public ResponseEntity getTestFormat() {
@@ -98,7 +95,7 @@ public class TestController {
 
         Test test = new Test();
         test.setUser(user);
-        test.setTakenAt(new Date(114,5,14));
+        test.setTakenAt(new Date());
         test.setPassed(false);
 
         testService.addTest(test);

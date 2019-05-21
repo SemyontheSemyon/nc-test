@@ -17,18 +17,14 @@ import java.util.Optional;
 @Component
 public class UserInfoConv {
 
-    @Autowired
-    EnrollmentServiceImpl enrollmentService;
-    @Autowired
     EnrollmentCityTestFormatRepository enrollmentRepository;
-    @Autowired
     UserService userService;
+
     @Autowired
-    UserService userInfoService;
-    @Autowired
-    CityService cityService;
-    @Autowired
-    SpecialityService specialityService;
+    public UserInfoConv(EnrollmentCityTestFormatRepository enrollmentRepository, UserService userService) {
+        this.enrollmentRepository = enrollmentRepository;
+        this.userService = userService;
+    }
 
     public UserInfo userInfoFromDto(UserInfoDTO userInfoDto) {
         User user = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());

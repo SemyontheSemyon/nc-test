@@ -16,14 +16,18 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private UserRepository userRepository;
-    @Autowired
     private UserInfoRepository userInfoRepository;
-    @Autowired
     private RoleRepository roleRepository;
-    @Autowired
     private EmailServiceImpl emailService;
+
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository, UserInfoRepository userInfoRepository, RoleRepository roleRepository, EmailServiceImpl emailService) {
+        this.userRepository = userRepository;
+        this.userInfoRepository = userInfoRepository;
+        this.roleRepository = roleRepository;
+        this.emailService = emailService;
+    }
 
     @Override
     public User getUser(String username) {
