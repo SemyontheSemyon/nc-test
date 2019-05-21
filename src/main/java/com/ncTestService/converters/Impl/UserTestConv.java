@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserTestConv {
 
-    TestUserRepository testUserRepository;
+    private TestUserRepository testUserRepository;
 
     @Autowired
     public UserTestConv(TestUserRepository testUserRepository) {

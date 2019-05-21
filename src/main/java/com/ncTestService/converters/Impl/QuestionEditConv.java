@@ -16,10 +16,10 @@ import java.util.List;
 @Service
 public class QuestionEditConv {
 
-    QuestionRepository questionRepository;
-    AnswerRepository answerRepository;
-    SpecialityRepository specialityRepository;
-    QuestionTypeRepository questionTypeRepository;
+    private QuestionRepository questionRepository;
+    private AnswerRepository answerRepository;
+    private SpecialityRepository specialityRepository;
+    private QuestionTypeRepository questionTypeRepository;
 
     @Autowired
     public QuestionEditConv(QuestionRepository questionRepository, AnswerRepository answerRepository, SpecialityRepository specialityRepository, QuestionTypeRepository questionTypeRepository) {

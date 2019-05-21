@@ -13,7 +13,7 @@ import java.util.List;
 @RestController()
 public class StudentController {
 
-    StudentServiceImpl studentService;
+    private StudentServiceImpl studentService;
 
     @Autowired
     public StudentController(StudentServiceImpl studentService) {

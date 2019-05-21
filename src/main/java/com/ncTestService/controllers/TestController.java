@@ -22,10 +22,10 @@ import java.util.Optional;
 @RestController
 public class TestController {
 
-    UserService userService;
-    TestService testService;
-    QuestionConv questionConv;
-    AnswerConv answerConv;
+    private UserService userService;
+    private TestService testService;
+    private QuestionConv questionConv;
+    private AnswerConv answerConv;
 
     @Autowired
     public TestController(UserService userService, TestService testService, QuestionConv questionConv, AnswerConv answerConv) {

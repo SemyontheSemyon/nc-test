@@ -14,8 +14,8 @@ import java.util.List;
 @Service
 public class QuestionConv {
 
-    QuestionRepository questionRepository;
-    AnswerRepository answerRepository;
+    private QuestionRepository questionRepository;
+    private AnswerRepository answerRepository;
 
     @Autowired
     public QuestionConv(QuestionRepository questionRepository, AnswerRepository answerRepository) {

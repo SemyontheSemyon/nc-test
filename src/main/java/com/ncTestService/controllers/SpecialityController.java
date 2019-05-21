@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 public class SpecialityController {
 
-    SpecialityService specialityService;
+    private SpecialityService specialityService;
 
     @Autowired
     public SpecialityController(SpecialityService specialityService) {

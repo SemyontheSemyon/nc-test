@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ECTFConverterImpl implements ECTFConverter {
 
-    CityService cityService;
-    SpecialityService specialityService;
-    EnrollmentCityTestFormatRepository ectfRepository;
+    private CityService cityService;
+    private SpecialityService specialityService;
+    private EnrollmentCityTestFormatRepository ectfRepository;
 
     @Autowired
     public ECTFConverterImpl(CityService cityService, SpecialityService specialityService, EnrollmentCityTestFormatRepository ectfRepository) {

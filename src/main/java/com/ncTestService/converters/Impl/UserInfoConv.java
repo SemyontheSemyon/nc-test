@@ -17,8 +17,8 @@ import java.util.Optional;
 @Component
 public class UserInfoConv {
 
-    EnrollmentCityTestFormatRepository enrollmentRepository;
-    UserService userService;
+    private EnrollmentCityTestFormatRepository enrollmentRepository;
+    private UserService userService;
 
     @Autowired
     public UserInfoConv(EnrollmentCityTestFormatRepository enrollmentRepository, UserService userService) {

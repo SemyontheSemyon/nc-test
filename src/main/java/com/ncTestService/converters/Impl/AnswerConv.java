@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AnswerConv {
 
-    QuestionService questionService;
-    AnswerService answerService;
+    private QuestionService questionService;
+    private AnswerService answerService;
 
     @Autowired
     public AnswerConv(QuestionService questionService, AnswerService answerService) {
