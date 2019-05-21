@@ -19,11 +19,11 @@ import java.util.List;
 @RestController
 public class EnrollmentController {
 
-    ECTFService ectfService;
-    EnrollmentService enrollmentService;
-    TestService testService;
-    CityService cityService;
-    ECTFConverter ectfConverter;
+    private ECTFService ectfService;
+    private EnrollmentService enrollmentService;
+    private TestService testService;
+    private CityService cityService;
+    private ECTFConverter ectfConverter;
 
     @Autowired
     public EnrollmentController(ECTFService ectfService, EnrollmentService enrollmentService, TestService testService, CityService cityService, ECTFConverter ectfConverter) {

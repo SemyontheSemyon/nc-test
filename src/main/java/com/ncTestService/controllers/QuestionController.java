@@ -20,10 +20,10 @@ import java.util.List;
 @RestController
 public class QuestionController {
 
-    QuestionEditConv conv;
-    QuestionService questionService;
-    AnswerService answerService;
-    SpecialityService specialityService;
+    private QuestionEditConv conv;
+    private QuestionService questionService;
+    private AnswerService answerService;
+    private SpecialityService specialityService;
 
     @Autowired
     public QuestionController(QuestionEditConv conv, QuestionService questionService, AnswerService answerService, SpecialityService specialityService) {
