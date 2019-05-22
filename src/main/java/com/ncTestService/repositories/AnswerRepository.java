@@ -10,6 +10,6 @@ public interface AnswerRepository extends CrudRepository<Answer, Long> {
 
     List<Answer> findByQuestion(Question question);
 
-    Answer findByQuestionAndAndCorrect(Question question, boolean correct);
+    List<Answer> findByQuestionAndCorrect(Question question, boolean correct);
 
 }

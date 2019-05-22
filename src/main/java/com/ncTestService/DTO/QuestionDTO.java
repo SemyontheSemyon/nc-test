@@ -17,5 +17,5 @@ public class QuestionDTO {
 
     List<String> answers;
 
-    String correctAnswer;
+    List<String> correctAnswer;
 }

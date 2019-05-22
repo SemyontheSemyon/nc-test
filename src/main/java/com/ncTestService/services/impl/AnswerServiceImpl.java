@@ -31,8 +31,8 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public Answer getCorrectAnswer(Question question) {
-        return answerRepository.findByQuestionAndAndCorrect(question, true);
+    public List<Answer> getCorrectAnswer(Question question) {
+        return answerRepository.findByQuestionAndCorrect(question, true);
     }
 
     @Override

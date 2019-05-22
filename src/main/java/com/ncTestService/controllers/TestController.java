@@ -5,7 +5,6 @@ import com.ncTestService.DTO.QuestionDTO;
 import com.ncTestService.converters.Impl.AnswerConv;
 import com.ncTestService.converters.Impl.QuestionConv;
 import com.ncTestService.models.*;
-import com.ncTestService.repositories.QuestionRepository;
 import com.ncTestService.services.TestService;
 import com.ncTestService.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +47,7 @@ public class TestController {
 
         if (ectf != null) {
             testFormat = ectf.getTestFormat();
-        } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.I_AM_A_TEAPOT);
+        } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.CONFLICT);
 
         return new ResponseEntity(testFormat, HttpStatus.OK);
 
@@ -69,7 +68,7 @@ public class TestController {
         if (ectf != null) {
             testFormat = ectf.getTestFormat();
             speciality = ectf.getEnrollment().getSpeciality();
-        } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.I_AM_A_TEAPOT);
+        } else return new ResponseEntity("Apply on enrollment first!", HttpStatus.CONFLICT);
 
         List<Question> questions = testService.generateTest(testFormat.getNumberOfQuestions(), speciality);
 
@@ -105,7 +104,7 @@ public class TestController {
         for (AnswerDTO dto : answers) {
             TestUser testUser = answerConv.convertFromDTO(dto);
             testUser.setTest(test);
-            testService.checkTestUser(testUser);
+            testUser.setCorrect(testService.checkAnswers(dto));
             testUsers.add(testUser);
             testService.addTestUser(testUser);
         }

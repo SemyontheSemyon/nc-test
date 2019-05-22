@@ -65,8 +65,9 @@ public class QuestionController {
             Answer answer = new Answer();
             answer.setQuestion(question);
             answer.setText(answerText);
-            if (answerText.equals(dto.getCorrectAnswer())) {
-                answer.setCorrect(true);
+            answer.setCorrect(false);
+            for (String correctAnswerText : dto.getCorrectAnswer()) {
+                if (answerText.equals(correctAnswerText)) answer.setCorrect(true);
             }
             answerService.saveAnswer(answer);
         }
