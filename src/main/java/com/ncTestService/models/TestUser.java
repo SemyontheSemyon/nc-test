@@ -31,10 +31,8 @@ public class TestUser {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Question question;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "answer_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Answer Answer;
+    @Column(nullable = false, columnDefinition = "text", name = "correct_answer")
+    private String answer;
 
     @Column(nullable = false, columnDefinition = "text", name = "student_answer")
     private String studentAnswer;

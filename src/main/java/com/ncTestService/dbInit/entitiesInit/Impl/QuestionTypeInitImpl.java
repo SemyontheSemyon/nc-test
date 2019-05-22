@@ -16,5 +16,6 @@ public class QuestionTypeInitImpl implements QuestionTypeInit {
     public void initQuestionTypes() {
         questionTypeRepository.save(new QuestionType("radio"));
         questionTypeRepository.save(new QuestionType("free"));
+        questionTypeRepository.save(new QuestionType("check"));
     }
 }

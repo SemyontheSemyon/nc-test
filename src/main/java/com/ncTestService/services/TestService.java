@@ -1,6 +1,7 @@
 package com.ncTestService.services;
 
 
+import com.ncTestService.DTO.AnswerDTO;
 import com.ncTestService.models.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface TestService {
 
     void addTestUser(TestUser testUser);
 
-    void checkTestUser(TestUser testUser);
+    boolean checkAnswers(AnswerDTO dto);
 
     TestFormat addTestFormat(TestFormat testFormat);
 

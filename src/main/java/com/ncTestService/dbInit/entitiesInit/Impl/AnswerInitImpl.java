@@ -50,6 +50,23 @@ public class AnswerInitImpl {
                 answerRepository.save(answer2);
                 answerRepository.save(answer3);
             }
+
+            if (question.getQuestionType().equals(questionTypeRepository.findByName("check"))) {
+                Answer answer = new Answer("A", true);
+                Answer answer1 = new Answer("B", true);
+                Answer answer2 = new Answer("C", false);
+                Answer answer3 = new Answer("D", false);
+
+                answer.setQuestion(question);
+                answer1.setQuestion(question);
+                answer2.setQuestion(question);
+                answer3.setQuestion(question);
+
+                answerRepository.save(answer);
+                answerRepository.save(answer1);
+                answerRepository.save(answer2);
+                answerRepository.save(answer3);
+            }
         }
 
 

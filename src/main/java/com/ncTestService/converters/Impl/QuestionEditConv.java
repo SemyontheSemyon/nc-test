@@ -33,7 +33,8 @@ public class QuestionEditConv {
         QuestionDTO dto = new QuestionDTO();
         List<Answer> answerList = answerRepository.findByQuestion(question);
         List<String> answers = new ArrayList<>();
-        Answer correctAnswer = answerRepository.findByQuestionAndAndCorrect(question, true);
+        List<Answer> correctAnswer = answerRepository.findByQuestionAndCorrect(question, true);
+        List<String> correstAnswerText = new ArrayList<>();
 
         dto.setId(question.getId());
         dto.setText(question.getText());
@@ -42,7 +43,10 @@ public class QuestionEditConv {
             answers.add(a.getText());
         }
         dto.setAnswers(answers);
-        dto.setCorrectAnswer(correctAnswer.getText());
+        for (Answer a : correctAnswer) {
+            correstAnswerText.add(a.getText());
+        }
+        dto.setCorrectAnswer(correstAnswerText);
 
         return dto;
     }

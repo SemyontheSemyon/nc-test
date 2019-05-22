@@ -1,16 +1,16 @@
 package com.ncTestService.services.impl;
 
+import com.ncTestService.DTO.AnswerDTO;
 import com.ncTestService.models.*;
-import com.ncTestService.repositories.QuestionRepository;
-import com.ncTestService.repositories.TestFormatRepository;
-import com.ncTestService.repositories.TestRepository;
-import com.ncTestService.repositories.TestUserRepository;
+import com.ncTestService.repositories.*;
 import com.ncTestService.services.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TestServiceImpl implements TestService {
@@ -19,13 +19,16 @@ public class TestServiceImpl implements TestService {
     private TestUserRepository testUserRepository;
     private TestFormatRepository testFormatRepository;
     private QuestionRepository questionRepository;
+    private AnswerRepository answerRepository;
 
     @Autowired
-    public TestServiceImpl(TestRepository testRepository, TestUserRepository testUserRepository, TestFormatRepository testFormatRepository, QuestionRepository questionRepository) {
+    public TestServiceImpl(TestRepository testRepository, TestUserRepository testUserRepository, TestFormatRepository testFormatRepository, QuestionRepository questionRepository,
+                           AnswerRepository answerRepository) {
         this.testRepository = testRepository;
         this.testUserRepository = testUserRepository;
         this.testFormatRepository = testFormatRepository;
         this.questionRepository = questionRepository;
+        this.answerRepository = answerRepository;
     }
 
     @Override
@@ -57,11 +60,22 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public void checkTestUser(TestUser testUser) {
-        String correctAns = testUser.getAnswer().getText().toLowerCase();
-        String userAns = testUser.getStudentAnswer().toLowerCase();
+    public boolean checkAnswers(AnswerDTO dto) {
+        List<String> studentAns = dto.getStudentAnswer();
+        Question question = questionRepository.findById(dto.getId()).get();
+        List<Answer> answers = answerRepository.findByQuestionAndCorrect(question, true);
+        List<String> answersText = new ArrayList<>();
 
-        testUser.setCorrect(userAns.equals(correctAns));
+        for (Answer a : answers) {
+            answersText.add(a.getText().toLowerCase());
+        }
+
+        studentAns = studentAns.stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
+
+        Collections.sort(studentAns);
+        Collections.sort(answersText);
+
+        return answersText.equals(studentAns);
     }
 
     @Override

@@ -11,7 +11,7 @@ public interface AnswerService {
 
     Answer getAnswer(Long id);
 
-    Answer getCorrectAnswer(Question question);
+    List<Answer> getCorrectAnswer(Question question);
 
     List<Answer> getAnswer(Question question);
 
