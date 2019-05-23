@@ -24,16 +24,21 @@ public class UserInitImpl implements UserInit {
     @Autowired
     BCryptPasswordEncoder encoder;
 
+    private final int NUMBER_OF_USERS = 150;
+
     @Override
     public void initUsers() {
 
         List<User> list = new ArrayList<>();
 
-        User userNAP = new User();
-        userNAP.setEmail("USER");
-        userNAP.setPassword(encoder.encode("123456"));
-        userNAP.setRoles(new HashSet<>());
-        userNAP.getRoles().add(roleRepository.findByName("ROLE_USER"));
+        for (int i = 0; i < NUMBER_OF_USERS; i++) {
+            User userNAP = new User();
+            userNAP.setEmail("USER" + i);
+            userNAP.setPassword(encoder.encode("123456"));
+            userNAP.setRoles(new HashSet<>());
+            userNAP.getRoles().add(roleRepository.findByName("ROLE_USER"));
+            list.add(userNAP);
+        }
 
         User userPAP = new User();
         userPAP.setEmail("HR");
@@ -41,7 +46,6 @@ public class UserInitImpl implements UserInit {
         userPAP.setRoles(new HashSet<>());
         userPAP.getRoles().add(roleRepository.findByName("ROLE_MANAGER"));
 
-        list.add(userNAP);
         list.add(userPAP);
 
         userRepository.saveAll(list);

@@ -3,6 +3,7 @@ package com.ncTestService.dbInit;
 import com.ncTestService.dbInit.entitiesInit.*;
 import com.ncTestService.dbInit.entitiesInit.Impl.AnswerInitImpl;
 import com.ncTestService.dbInit.entitiesInit.Impl.QuestionInitImpl;
+import com.ncTestService.dbInit.entitiesInit.Impl.TestInitImpl;
 import com.ncTestService.models.DBStatus;
 import com.ncTestService.repositories.DBStatusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,8 @@ public class DBInit implements ApplicationListener<ContextRefreshedEvent> {
     QuestionInitImpl questionInit;
     @Autowired
     AnswerInitImpl answerInit;
+    @Autowired
+    TestInitImpl testInit;
     private boolean done = false;
 
     @Override
@@ -54,6 +57,7 @@ public class DBInit implements ApplicationListener<ContextRefreshedEvent> {
             ectfInit.initECTF();
             questionInit.initQuestions();
             answerInit.initAnswers();
+            testInit.initTests();
 
 
             dbStatusRepository.save(new DBStatus(true));
